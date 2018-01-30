@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import CardContainer from '../CardContainer/CardContainer';
+import Main from '../Main/Main';
+import Header from '../Header/Header'
 
 class App extends Component {
   constructor() {
@@ -13,7 +14,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CardContainer />
+        <Header />
+        <Main />
       </div>
     );
   }
