@@ -9,9 +9,24 @@ const Main = () => {
     <div> 
       <Switch>
         
-        <Route path='/people' component={CardContainer}/>
-        <Route path='/planets' component={CardContainer}/>
-        <Route path='/vehicles' component={CardContainer}/>
+        <Route path='/people' 
+          render={() => (
+            <CardContainer name={'people'} />
+          )}
+        />
+
+        <Route path='/planets' 
+          render={() => (
+            <CardContainer name={'planets'} />
+          )}
+        />
+
+        <Route path='/vehicles' 
+          render={() => (
+            <CardContainer name={'vehicles'} /> 
+          )}
+        />
+        
     </Switch>
     </div>
   );
