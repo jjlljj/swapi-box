@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        i am an apppppppp
+        this is app
       </div>
     );
   }
