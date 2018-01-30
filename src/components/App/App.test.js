@@ -5,6 +5,12 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import App from './App';
 
-it('renders without crashing', () => {
+describe('App', () => {
 
+  it('should exist', () => {
+    const renderedComponent = shallow(<App />);
+
+    expect(renderedComponent).toBeDefined();
+  });
+  
 });

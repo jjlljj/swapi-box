@@ -8,7 +8,9 @@ import Card from './Card';
 describe('Card', () => {
 
   it('should exist', () => {
-  
+    const renderedComponent = shallow(<Card/>);
+
+    expect(renderedComponent).toBeDefined();
   })
 
 })
