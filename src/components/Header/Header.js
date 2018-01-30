@@ -1,10 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import './Header.css';
+import Nav from '../Nav/Nav'
 
 const Header = () => {
   return (
-    <div> i am Header </div>
+    <div>
+      <Nav />
+    </div>
   );
 };
 

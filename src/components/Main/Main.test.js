@@ -3,12 +3,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { shallow } from 'enzyme';
-import Controls from './Controls';
+import Main from './Main';
 
-describe('Controls', () => {
+describe('Main', () => {
 
   it('should exist', () => {
-    const renderedComponent = shallow(<Controls />);
+    const renderedComponent = shallow(<Main />);
 
     expect(renderedComponent).toBeDefined();
   })

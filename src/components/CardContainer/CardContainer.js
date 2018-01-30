@@ -3,9 +3,11 @@ import propTypes from 'prop-types';
 import './CardContainer.css';
 import Card from '../Card/Card';
 
-const CardContainer = () => {
+const CardContainer = ({name}) => {
+  console.log(name)
   return (
     <div> 
+      {name}
       <Card />
     </div>
   );
