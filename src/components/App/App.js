@@ -4,10 +4,10 @@ import CardContainer from '../CardContainer/CardContainer';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
    
-    }
+    };
   }
 
   render() {
