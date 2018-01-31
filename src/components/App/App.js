@@ -26,7 +26,7 @@ class App extends Component {
     planets = planets || await getPlanets()
     vehicles = vehicles || await getVehicles()
     
-    this.dataToSto({ people, planets, vehicles })
+    //this.dataToSto({ people, planets, vehicles })
     this.setState({ people, planets, vehicles })
 
   }
