@@ -18,8 +18,8 @@ export const getScroll = async () => {
   return { title, episode: episode_id, text: opening_crawl }
 }
 
-const randomNum = number => {
-  return Math.floor(Math.random() * number + 1) 
+const randomNum = max => {
+  return Math.floor(Math.random() * max + 1) 
 }
 
 
@@ -33,10 +33,9 @@ export const getPeople = async ( page=1 ) => {
 }
 
 const getPeopleData = peopleArray => {
-  const unresolved = peopleArray.map(async person => {
-    const { name, species, homeworld } = person
-    const charSpecies = await getSpecies(species)
-    const { world, population } = await getWorld(homeworld)
+  const unresolved = peopleArray.map(async ({ name, species, homeworld }) => {
+    let charSpecies = await getSpecies(species)
+    let { world, population } = await getWorld(homeworld)
 
     return { name, charSpecies, world, population }
   })
@@ -67,9 +66,8 @@ export const getPlanets = async ( page=1 ) => {
 }
 
 const getPlanetData = planetArray => {
-  const unresolved = planetArray.map(async planet => {
-    const { name, terrain, climate, population, residents } = planet
-    const allResidents = await getResidents(residents)
+  const unresolved = planetArray.map(async ({ name, terrain, climate, population, residents }) => {
+    let allResidents = await getResidents(residents)
 
     return { name, terrain, climate, population, allResidents }
   })
@@ -77,11 +75,30 @@ const getPlanetData = planetArray => {
   return Promise.all(unresolved)
 }
 
-const getResidents = residents => {
-  const unresolved = residents.map(async residentUrl => {
-    const { name } = await fetchApi(residentUrl)
+const getResidents = residentsArray => {
+  const unresolved = residentsArray.map(async residentUrl => {
+    let { name } = await fetchApi(residentUrl)
 
     return name
+  })
+
+  return Promise.all(unresolved)
+}
+
+
+// Get Vehicles
+
+export const getVehicles = async () => {
+  const url = 'https://swapi.co/api/vehicles/'
+  const arrayOfVehicles = await fetchApi(url)
+  const allVehicles = await getVehicleData(arrayOfVehicles.results)
+
+  return allVehicles
+}
+
+const getVehicleData = vehiclesArray => {
+  const unresolved = vehiclesArray.map(async ({ name, model, vehicle_class, passengers }) => {
+    return { name, model, vehicle_class, passengers }  
   })
 
   return Promise.all(unresolved)
