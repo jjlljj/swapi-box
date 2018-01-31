@@ -14,12 +14,23 @@ export const getScroll = async () => {
   const num = randomNum(7)
   const url = `https://swapi.co/api/films/${num}`
   const { title, episode_id, opening_crawl } = await fetchApi(url)
+  const episode = toNumerals[episode_id]
 
-  return { title, episode: episode_id, text: opening_crawl }
+  return { title, episode, text: opening_crawl }
 }
 
 const randomNum = max => {
   return Math.floor(Math.random() * max + 1) 
+}
+
+const toNumerals = {
+  1: 'Episode I',
+  2: 'Episode II',
+  3: 'Episode III',
+  4: 'Episode IV',
+  5: 'Episode V',
+  6: 'Episode VI',
+  7: 'Episode VII'
 }
 
 

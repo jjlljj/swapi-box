@@ -2,9 +2,17 @@ import React from 'react';
 import propTypes from 'prop-types';
 import './Card.css';
 
-const Card = () => {
+const Card = (card) => {
+  const cardKeys = Object.keys( card )
+  
+
   return (
-    <div> i am card </div>
+    <div> 
+      <h3>{card.name}</h3>
+      <ul>
+        { renderedContent }
+      </ul>
+    </div>
   );
 };
 

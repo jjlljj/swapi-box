@@ -3,12 +3,13 @@ import './App.css';
 import Main from '../Main/Main';
 import Header from '../Header/Header'
 import { getScroll, getPeople, getPlanets, getVehicles } from '../../dataHelper.js'
+import Welcome from '../Welcome/Welcome'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      openingScroll: {},
+      openingText: {},
       people: null,
       planets: null,
       vehicles: null
@@ -16,16 +17,14 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const openingScroll = await getScroll()
+    const openingText = await getScroll()
     let { people, planets, vehicles } = this.lastFromSto()
 
     people = people || await getPeople()
     planets = planets || await getPlanets()
     vehicles = vehicles || await getVehicles()
     
-    this.setState({ openingScroll, people, planets, vehicles }, ()=> {
-      console.log(this.state)
-    } )
+    this.setState({ openingText })
 
   }
 
@@ -46,7 +45,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Main />
-        <p> {this.state.openingScroll.text}</p>
+        <Welcome {...this.state.openingText}/>
       </div>
     );
   }
