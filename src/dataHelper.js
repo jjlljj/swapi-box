@@ -48,7 +48,7 @@ const getPeopleData = peopleArray => {
     let charSpecies = await getSpecies(species)
     let { world, population } = await getWorld(homeworld)
 
-    return { name, charSpecies, world, population }
+    return { name, Homeword: world, Species: charSpecies, Population: population }
   })
     
   return Promise.all(unresolved)
@@ -79,8 +79,9 @@ export const getPlanets = async ( page=1 ) => {
 const getPlanetData = planetArray => {
   const unresolved = planetArray.map(async ({ name, terrain, climate, population, residents }) => {
     let allResidents = await getResidents(residents)
+    const Residents = allResidents.join(", ")
 
-    return { name, terrain, climate, population, allResidents }
+    return { name, Terrain: terrain, Climate: climate, Population: population, Residents }
   })
     
   return Promise.all(unresolved)
@@ -110,7 +111,7 @@ export const getVehicles = async () => {
 
 const getVehicleData = vehiclesArray => {
   const unresolved = vehiclesArray.map(async ({ name, model, vehicle_class, passengers }) => {
-    return { name, model, vehicle_class, passengers }  
+    return { name, Model: model, "Vehicle Class": vehicle_class, Passengers: passengers }  
   })
 
   return Promise.all(unresolved)
