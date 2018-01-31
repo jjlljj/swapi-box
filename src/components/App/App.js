@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from '../Main/Main';
 import Header from '../Header/Header'
-import { getScroll, getPeople, getPlanets, getVehicles } from '../../dataHelper.js'
+import { getScroll, getPeople, getPlanets, getVehicles } from '../../dataHelper/dataHelper.js'
 import Welcome from '../Welcome/Welcome'
 import Card from '../Card/Card'
 
