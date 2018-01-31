@@ -19,8 +19,7 @@
 .crawl-wrap {
   position: relative;
   transform-origin: 50% 100%;
-  animation: crawl 70s linear;
-  animation-delay: 2s;
+  animation: crawl 70s linear infinite;
 }
 
 .title-wrap {
@@ -36,12 +35,12 @@
 
 @keyframes crawl {
   0% {
-    top: 500px;
+    top: 800px;
     transform: rotateX(20deg) translateZ(0);
   }
 
   100% {
-    top: -6000px;
+    top: -5000px;
     transform: rotateX(25deg) translateZ(-2500px);
   }
 }
