@@ -1,14 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import './Nav.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <div>   
-      <button><Link to="/people">People</Link></button>
-      <button><Link to="/planets">Planets</Link></button>
-      <button><Link to="/vehicles">Vehicles</Link></button>
+      <button><NavLink to="/people">People</NavLink></button>
+      <button><NavLink to="/planets">Planets</NavLink></button>
+      <button><NavLink to="/vehicles">Vehicles</NavLink></button>
     </div>
   );
 };
