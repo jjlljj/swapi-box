@@ -2,9 +2,13 @@ import React from 'react';
 import propTypes from 'prop-types';
 import './Card.css';
 
-const Card = (card) => {
-  const cardKeys = Object.keys( card )
-  
+const Card = ({ card }) => {
+  const cardKeys = Object.keys( card ).filter(item => item !== "name")
+  console.log(cardKeys)
+
+  const renderedContent = cardKeys.map( key => {
+    return ( <li>{key}: {card[key]}</li>)
+  })
 
   return (
     <div> 

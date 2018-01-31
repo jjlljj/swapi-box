@@ -4,6 +4,7 @@ import Main from '../Main/Main';
 import Header from '../Header/Header'
 import { getScroll, getPeople, getPlanets, getVehicles } from '../../dataHelper.js'
 import Welcome from '../Welcome/Welcome'
+import Card from '../Card/Card'
 
 class App extends Component {
   constructor() {
@@ -17,14 +18,16 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const openingText = await getScroll()
+    //const openingText = await getScroll()
+
     let { people, planets, vehicles } = this.lastFromSto()
 
     people = people || await getPeople()
     planets = planets || await getPlanets()
     vehicles = vehicles || await getVehicles()
     
-    this.setState({ openingText })
+    this.dataToSto({ people, planets, vehicles })
+    this.setState({ people, planets, vehicles })
 
   }
 
@@ -44,11 +47,14 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        { this.state.planets &&
+        <Card card={this.state.planets[0]} />
+        }
         <Main />
-        <Welcome {...this.state.openingText}/>
       </div>
     );
   }
 }
+        //<Welcome {...this.state.openingText}/>
 
 export default App;
