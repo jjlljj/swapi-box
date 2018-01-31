@@ -3,7 +3,7 @@
   background: #000;
   color: #feda4a;
   display: flex;
-  font-size: 60px;
+  font-size: 66px;
   font-weight: 600;
   height: 80vh;
   justify-content: center;
@@ -27,9 +27,9 @@
 }
 
 .title-wrap h2 {
-  font-size: 72px;
+  font-size: 70px;
   font-weight: 800;
-  margin-bottom: 30px;
+  margin: 30px;
   text-transform: uppercase;
 }
 
@@ -42,6 +42,6 @@
   100% {
     top: -6000px;
     transform: rotateX(25deg) translateZ(-2500px);
-
+    display: none;
   }
 }
