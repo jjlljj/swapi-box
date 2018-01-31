@@ -5,10 +5,11 @@ import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <div>   
+    <div className="nav-menu">   
       <button><NavLink to="/people">People</NavLink></button>
       <button><NavLink to="/planets">Planets</NavLink></button>
       <button><NavLink to="/vehicles">Vehicles</NavLink></button>
+      <button><NavLink to="/favorites">Favorites</NavLink></button>
     </div>
   );
 };

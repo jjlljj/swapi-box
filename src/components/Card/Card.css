@@ -1,0 +1,20 @@
+.card {
+  background-color: #000;
+  height: 340px;
+  margin: 20px;
+  text-align: center;
+  width: 260px;
+  color: #f2f2f2;
+}
+
+.card h3 {
+  display: inline-block;
+  font-size: 36px;
+  color: #feda4a;
+  font-weight: 800;
+  margin: 20px;
+}
+
+.card li {
+  margin: 10px 20px;
+}

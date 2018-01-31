@@ -5,9 +5,10 @@ import Nav from '../Nav/Nav'
 
 const Header = () => {
   return (
-    <div>
+    <header className="site-header">
+      <h1>STAR WARS</h1>
       <Nav />
-    </div>
+    </header>
   );
 };
 

@@ -11,7 +11,7 @@ const Card = ({ card }) => {
   })
 
   return (
-    <div> 
+    <div className="card"> 
       <h3>{card.name}</h3>
       <ul>
         { renderedContent }
