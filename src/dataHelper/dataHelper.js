@@ -40,8 +40,8 @@ export const getPeople = async ( page=1 ) => {
 
 const getPeopleData = peopleArray => {
   const unresolved = peopleArray.map(async ({ name, species, homeworld }) => {
-    let charSpecies = await getSpecies(species)
-    let { world, population } = await getWorld(homeworld)
+    let { world, population } = await getWorldData(homeworld)
+    let charSpecies = await getSpeciesData(species)
 
     return { name, Homeword: world, Species: charSpecies, Population: population }
   })
@@ -49,13 +49,13 @@ const getPeopleData = peopleArray => {
   return Promise.all(unresolved)
 }
 
-const getWorld = async url => {
+const getWorldData = async url => {
   const { name, population } = await fetchApi(url)
 
   return { world: name, population }
 }
 
-const getSpecies = async url => {
+const getSpeciesData = async url => {
   const { name } = await fetchApi(url)
 
   return name
@@ -95,15 +95,11 @@ const getResidents = residentsArray => {
 export const getVehicles = async () => {
   const url = 'https://swapi.co/api/vehicles/'
   const arrayOfVehicles = await fetchApi(url)
-  const allVehicles = await getVehicleData(arrayOfVehicles.results)
-
-  return allVehicles
+  return getVehicleData(arrayOfVehicles.results)
 }
 
 const getVehicleData = vehiclesArray => {
-  const unresolved = vehiclesArray.map(async ({ name, model, vehicle_class, passengers }) => {
+  return vehiclesArray.map(({ name, model, vehicle_class, passengers }) => {
     return { name, Model: model, "Vehicle Class": vehicle_class, Passengers: passengers }  
   })
-
-  return Promise.all(unresolved)
 }

@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { getScroll, getPeople, getPlanets, getVehicles } from './dataHelper.js'
+import { fetchApi, getScroll, getPeople, getPlanets, getVehicles } from './dataHelper.js'
 
 describe('getScroll', () => {
 
@@ -9,3 +9,21 @@ describe('getScroll', () => {
   })
 
 })
+
+//  fetchAPi
+
+// getScroll
+//   randomNum
+
+// getPeople
+//   getPeopleData
+//   getWorldData
+//   getSpeciesData
+
+// getPlanets
+//   getPlanetData
+//   getResidents
+
+
+// getVehicles
+//   getVehiclesData
