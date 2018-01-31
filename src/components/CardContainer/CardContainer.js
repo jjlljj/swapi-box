@@ -4,6 +4,7 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 
 const CardContainer = ({name}) => {
+
   return (
     <div> 
       {name}
