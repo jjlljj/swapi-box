@@ -89,6 +89,7 @@ const getResidents = residentsArray => {
 // Get Vehicles
 
 export const getVehicles = async () => {
+  console.log('boo')
   const url = 'https://swapi.co/api/vehicles/'
   const arrayOfVehicles = await fetchApi(url)
   const allVehicles = await getVehicleData(arrayOfVehicles.results)
