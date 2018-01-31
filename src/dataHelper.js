@@ -111,7 +111,7 @@ export const getVehicles = async () => {
 
 const getVehicleData = vehiclesArray => {
   const unresolved = vehiclesArray.map(async ({ name, model, vehicle_class, passengers }) => {
-    return { name, model, vehicle_class, passengers }  
+    return { name, Model: model, "Vehicle Class": vehicle_class, Passengers: passengers }  
   })
 
   return Promise.all(unresolved)
