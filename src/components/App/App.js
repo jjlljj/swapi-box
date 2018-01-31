@@ -18,16 +18,21 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    //const openingText = await getScroll()
+    const openingText = await getScroll()
 
-    let { people, planets, vehicles } = this.lastFromSto()
+    this.setState({openingText}, async ()=> {
+      let { people, planets, vehicles } = this.lastFromSto()
+        
+      people = people || await getPeople()
+      planets = planets || await getPlanets()
+      vehicles = vehicles || await getVehicles()
 
-    people = people || await getPeople()
-    planets = planets || await getPlanets()
-    vehicles = vehicles || await getVehicles()
+      this.setState({ people, planets, vehicles })
+    })
+
+
     
     // this.dataToSto({ people, planets, vehicles })
-    this.setState({ people, planets, vehicles })
 
   }
 

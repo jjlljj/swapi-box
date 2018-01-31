@@ -2,7 +2,7 @@
 
 import { fetchApi, getScroll, getPeople, getPlanets, getVehicles } from './dataHelper.js'
 
-describe('getScroll', () => {
+describe('fetchApi', () => {
 
   it(() => {
 
