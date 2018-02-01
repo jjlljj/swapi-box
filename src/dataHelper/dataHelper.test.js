@@ -100,7 +100,7 @@ describe('getSpeciesData', () => {
   let url
   let mockSpeciesData
 
-  beforeAll(() => {
+  beforeEach(() => {
     url = 'https://swapi.co/api/species/1/'
     mockSpeciesData = { "name": "Human", 
         "classification": "mammal" }
@@ -123,7 +123,7 @@ describe('getSpeciesData', () => {
   it('should return the expected species name', async () => { 
     const speciesResult = await getSpeciesData(url)
     
-    expect(speciesResult).toEqual('Human')
+    expect(speciesResult).toEqual({ Species:'Human'})
   })
 
   it('should catch errors', async () => {
@@ -188,23 +188,54 @@ describe('getWorldData', () => {
 
 
 
-describe.skip('getPeopleData', () => {
+describe('getPeopleData', () => {
 
-  let url
-  let mockPeopleData = {}
+  let peopleArray 
+  let mockPeopleData
 
   beforeAll(() => {
-    url = 'https://swapi.co/api/people/1/'
+    
+    peopleArray = [
+      { 
+        name: 'Luke skywalker',
+        species: 'https://swapi.co/api/species/1/',
+        homeworld: 'https://swapi.co/api/planets/1/' 
+      },
+      { 
+        name: 'C-3PO',
+        species: 'https://swapi.co/api/species/2/',
+        homeworld: 'https://swapi.co/api/planets/2/'
+      }
+    ]
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 200,
-        json: () => Promise.resolve( mockPeopleData )
+        json: () => Promise.resolve()
       })
     )
   })
 
-  it('should not pass', () => {
-    expect(false).toEqual(true)
+  it('should call the getWorldData and getSpeciesData fetchApi fetch', () => {
+    getPeopleData(peopleArray)
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/planets/1/')
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/planets/2/')
+  })
+
+  it('should return an object with the expected keys and values', async () => {
+    const peopleData = await getPeopleData(peopleArray)
+    const expected = [
+      { name: 'Luke skywalker', Homeword: undefined, Species: undefined, Population: undefined },
+      { name: 'C-3PO', Homeword: undefined, Species: undefined, Population: undefined },
+      ]
+
+    expect(peopleData).toEqual(expected)
+  })
+
+  it('should catch errors', () => {
+    
+    
+    
   })
 })
 
@@ -338,7 +369,7 @@ describe('getVehicles', () => {
     expect(vehicleResult).toEqual(expected)
   })
 
-  it('should handle errors', async () => {
+  it('should catch errors', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise. reject())
 
     const vehicleResult = await getVehicles()
@@ -364,6 +395,5 @@ describe('getVehicles', () => {
 //   getPlanetData
 //   getResidents
 
-
-// getVehicles
-//   getVehiclesData
+// getVehiclesData    V
+//   getVehiclesData  V
