@@ -135,10 +135,10 @@ describe('getWorldData', () => {
 
 })
 
-describe.skip('getPeopleData', () => {
+describe('getPeopleData', () => {
 
   let url
-  let mockPeopleData
+  let mockPeopleData = {}
 
   beforeAll(() => {
     url = 'https://swapi.co/api/people/1/'
@@ -161,7 +161,6 @@ describe.skip('getPeople', () => {
   let mockPeople
 
   beforeAll(() => {
-    url = 'https://swapi.co/api/people/'
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         json: () => Promise.resolve( mockPeople )

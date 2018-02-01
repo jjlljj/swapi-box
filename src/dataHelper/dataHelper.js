@@ -1,17 +1,30 @@
 
 const fetchApi = async url => {
-  const initialFetch = await fetch(url)
-  return initialFetch.json()
+
+  const response = await fetch(url)
+
+  if (response.status <= 200) {
+    return await response.json()
+  } else {
+    throw (new Error('Could not fetch data'))
+  }
 }
 
 // Get movie text opening page
 const getScroll = async () => {
-  const num = randomNum(7)
-  const url = `https://swapi.co/api/films/${num}`
-  const { title, episode_id, opening_crawl } = await fetchApi(url)
-  const episode = toNumerals[episode_id - 1]
+  try {
+    const num = 9 || randomNum(7)
+    const url = `https://swapi.co/api/films/${num}`
+    const { title, episode_id, opening_crawl } = await fetchApi(url)
+    const episode = toNumerals[episode_id - 1]
 
-  return { title, episode, text: opening_crawl }
+    return { title, episode, text: opening_crawl }
+  } 
+  catch(er) {
+    console.log(er)
+    const error = new Error('Failed to fetch film')
+    return error
+  }
 }
 
 const randomNum = max => {
@@ -31,11 +44,15 @@ const toNumerals = [
 
 // Get People
 const getPeople = async ( page=1 ) => {
-  const url = `https://swapi.co/api/people/?page=${page}`
-  const arrayOfPeople = await fetchApi(url)
-  const allPeople = await getPeopleData(arrayOfPeople.results)
+  try { const url = `https://swapi.co/api/people/?page=${page}`
+    const arrayOfPeople = await fetchApi(url)
+    const allPeople = await getPeopleData(arrayOfPeople.results)
 
-  return allPeople
+    return allPeople
+  } catch(er) {
+
+    const error = new Error('Failed to fetch People')
+  }
 }
 
 const getPeopleData = peopleArray => {
