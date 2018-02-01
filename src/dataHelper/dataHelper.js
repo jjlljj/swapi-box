@@ -5,7 +5,7 @@ const fetchApi = async url => {
 }
 
 // Get movie text opening page
-export const getScroll = async () => {
+const getScroll = async () => {
   const num = randomNum(7)
   const url = `https://swapi.co/api/films/${num}`
   const { title, episode_id, opening_crawl } = await fetchApi(url)
@@ -30,7 +30,7 @@ const toNumerals = [
 
 
 // Get People
-export const getPeople = async ( page=1 ) => {
+const getPeople = async ( page=1 ) => {
   const url = `https://swapi.co/api/people/?page=${page}`
   const arrayOfPeople = await fetchApi(url)
   const allPeople = await getPeopleData(arrayOfPeople.results)
@@ -62,7 +62,7 @@ const getSpeciesData = async url => {
 }
 
 // Get Planets
-export const getPlanets = async ( page=1 ) => {
+const getPlanets = async ( page=1 ) => {
   const url = `https://swapi.co/api/planets/?page=${page}`
   const arrayOfPlanets = await fetchApi(url)
   const allPlanets = await getPlanetData(arrayOfPlanets.results)
@@ -92,7 +92,7 @@ const getResidents = residentsArray => {
 }
 
 // Get Vehicles
-export const getVehicles = async () => {
+const getVehicles = async () => {
   const url = 'https://swapi.co/api/vehicles/'
   const arrayOfVehicles = await fetchApi(url)
   return getVehicleData(arrayOfVehicles.results)
@@ -103,3 +103,5 @@ const getVehicleData = vehiclesArray => {
     return { name, Model: model, "Vehicle Class": vehicle_class, Passengers: passengers }  
   })
 }
+
+export { fetchApi, getScroll, randomNum, getPeople, getPeopleData, getWorldData, getSpeciesData, getPlanets, getPlanetData, getResidents, getVehicles, getVehicleData }

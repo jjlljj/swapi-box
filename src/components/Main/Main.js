@@ -4,26 +4,35 @@ import './Main.css';
 import { Switch, Route } from 'react-router-dom'
 import CardContainer from '../CardContainer/CardContainer' 
 
-const Main = ({ getPeople, getVehicles, getPlanets}) => {
+const Main = ({ getPeople, getVehicles, getPlanets, cards}) => {
   return (
     <div> 
       <Switch>
         
-        <Route path='/people' 
+        <Route path='/people' activeClassName="active"
           render={() => (
-            <CardContainer fetchData={getPeople} />
+            <CardContainer 
+              name={'people'}
+              fetchData={getPlanets} 
+              cards={cards} />
           )}
         />
 
         <Route path='/planets' 
           render={() => (
-            <CardContainer name= {'planets'}fetchData={getPlanets} />
+            <CardContainer 
+              name={'planets'}
+              fetchData={getPlanets} 
+              cards={cards} />
           )}
         />
 
         <Route path='/vehicles' 
           render={() => (
-            <CardContainer fetchData={getVehicles} /> 
+            <CardContainer 
+              name={'vehicles'} 
+              fetchData={getVehicles} 
+              cards={cards} /> 
           )}
         />
         

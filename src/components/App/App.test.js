@@ -7,7 +7,7 @@ import App from './App';
 
 const localStorage = {}
 
-describe('App', () => {
+describe.skip('App', () => {
 
   it('should exist', () => {
     const renderedComponent = shallow(<App />, {disableLifecycleMethods: true});

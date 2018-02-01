@@ -7,14 +7,12 @@ class CardContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cards: []
+      cards: [],
+      name: ''
     }
   }
 
-  async componentDidMount() {
-    const cards = await this.props.fetchData()
-    this.setState(cards)
-  }
+ 
 
   render() {
     return (

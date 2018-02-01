@@ -13,7 +13,7 @@ class App extends Component {
       openingText: {},
       people: null,
       planets: null,
-      vehicles: null
+      vehicles: null,
     };
   }
 
@@ -52,10 +52,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        { this.state.planets &&
-        <Card card={this.state.planets[0]} />
-        }
-        <Main />
+        <Main 
+          getPeople={this.getPeople}
+          getPlanets={this.getPlanets}
+          getVehicles={this.getVehicles}
+          cards={'cardyo'}
+         />
       </div>
     );
   }
