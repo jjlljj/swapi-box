@@ -1,9 +1,6 @@
 
 const fetchApi = async url => {
-
   const response = await fetch(url)
-
-
 
   if (response.status <= 200) {
     return await response.json()
@@ -47,22 +44,28 @@ const toNumerals = [
 const getPeople = async ( page=1 ) => {
   try { const url = `https://swapi.co/api/people/?page=${page}`
     const arrayOfPeople = await fetchApi(url)
-      return await getPeopleData(arrayOfPeople.results) 
+    return await getPeopleData(arrayOfPeople.results) 
   } catch(er) {
     const error = new Error('Failed to fetch People')
   }
 }
 
 const getPeopleData = peopleArray => {
-  const unresolved = peopleArray.map(async ({ name, species, homeworld }) => {
-    
-    let { world, population } = await getWorldData(homeworld)
-    let { Species } = await getSpeciesData(species)
+  try {
+    const unresolved = peopleArray.map(async ({ name, species, homeworld }) => {
+      
+      let { world, population } = await getWorldData(homeworld)
+      let { Species } = await getSpeciesData(species)
 
-    return { name, Homeword: world, Species, Population: population }
-  })
-    
-  return Promise.all(unresolved)
+      return { name, Homeword: world, Species, Population: population }
+    })
+      
+    return Promise.all(unresolved)
+  }
+  catch(er) {
+    const error = new Error('Failed to get data for all people')
+    return error
+  }
 }
 
 const getWorldData = async url => {

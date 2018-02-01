@@ -28,9 +28,8 @@ describe('fetchApi', () => {
 
   it('should throw an error if the response is not okay', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-        json: () => Promise.resolve(
-          status: 500,
-        )
+        status: 500,
+        json: () => Promise.resolve()
       })
     )
 
@@ -232,10 +231,13 @@ describe('getPeopleData', () => {
     expect(peopleData).toEqual(expected)
   })
 
-  it('should catch errors', () => {
-    
-    
-    
+  it('should catch errors', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({}))
+
+    const peopleResult = await getPeopleData()
+    const expected = Error('Failed to get data for all people')
+
+    expect(peopleResult).toEqual(expected)
   })
 })
 
@@ -349,7 +351,7 @@ describe('getVehicles', () => {
     expect(window.fetch).toHaveBeenCalledWith(expected)
   }) 
 
-  it('should return the expected cleaned data', async () => {
+  it('should return the expected vehicles data', async () => {
     const vehicleResult = await getVehicles()
     const expected = [
       {
@@ -370,7 +372,7 @@ describe('getVehicles', () => {
   })
 
   it('should catch errors', async () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise. reject())
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject())
 
     const vehicleResult = await getVehicles()
     const expected = Error('Failed to get vehicles')
