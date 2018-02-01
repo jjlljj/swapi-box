@@ -246,25 +246,91 @@ describe('getPeopleData', () => {
   })
 })
 
-describe.skip('getPeople', () => {
+describe('getPeople', () => {
 
-  let url
   let mockPeople
 
   beforeAll(() => {
 
+    mockPeople = [
+      { 
+        name: 'Luke skywalker',
+        species: 'https://swapi.co/api/species/1/',
+        homeworld: 'https://swapi.co/api/planets/1/' 
+      },
+      { 
+        name: 'C-3PO',
+        species: 'https://swapi.co/api/species/2/',
+        homeworld: 'https://swapi.co/api/planets/2/'
+      }
+    ]
+    
+
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 200,
-        json: () => Promise.resolve( mockPeople )
+        json: () => Promise.resolve({ results: mockPeople })
       })
     )
   })
+
+  it('it should call the fetch in fetchApi with the correct params', () => {
+    expect(window.fetch).not.toHaveBeenCalled();
+
+    getPeople()
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/?page=1')
+  })
+
+  it('should return an array with data objects with the correct keys and values', async () => {
+    const peopleResult = await getPeople()
+    const expected = [
+      {
+        name: 'Luke skywalker',
+        Population: undefined,
+        Species: undefined,
+        HomeWorld: undefined,
+      },
+      {
+        name: 'C-3PO',
+        Population: undefined,
+        Species: undefined,
+        HomeWorld: undefined,
+      }
+    ]
+
+    expect(peopleResult).toEqual(expected)
+  })
+
+  it('should catch errors', async ()=> {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+
+    const peopleResult = await getPeople()
+
+    expect(peopleResult).toEqual(undefined)
+  })
+
+})
+
+describe('getResidents', () => {
+
+  it('should not pass', ()=> {
+    expect(false).toEqual(true)
+  })
+})
+
+describe('getPlanetData', () => {
 
   it('should not pass', () => {
     expect(false).toEqual(true)
   })
 })
 
+describe('getPlanets', () => {
+
+  it('should not pass', () => {
+    expect(false).toEqual(true)
+  })
+})
 
 describe('getVehicleData', () => {
 
@@ -395,8 +461,8 @@ describe('getVehicles', () => {
 // getScroll          V
 //   randomNum        V
 
-// getPeople
-//   getPeopleData    
+// getPeople          V
+//   getPeopleData    V
 //   getWorldData     V
 //   getSpeciesData   V
 

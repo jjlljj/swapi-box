@@ -46,7 +46,7 @@ const getPeople = async ( page=1 ) => {
     const arrayOfPeople = await fetchApi(url)
     return await getPeopleData(arrayOfPeople.results) 
   } catch(er) {
-    const error = new Error('Failed to fetch People')
+    const error = new Error('Failed to get People')
   }
 }
 
