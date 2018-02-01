@@ -21,6 +21,7 @@ describe('fetchApi', () => {
 
   it('calls fetch with the correct params', () => {
    const expectParams = ['https://swapi.co/api/films/1']
+   expect(window.fetch).not.toHaveBeenCalled();
 
     fetchApi(url)
     expect(window.fetch).toHaveBeenCalledWith(...expectParams)
@@ -114,6 +115,8 @@ describe('getSpeciesData', () => {
   })
 
   it('should call the fetch in fetchApi with the correct params', async () => {
+    expect(window.fetch).not.toHaveBeenCalled();
+
     getSpeciesData(url)
     
     expect(window.fetch).toHaveBeenCalledWith(url)
@@ -215,6 +218,8 @@ describe('getPeopleData', () => {
   })
 
   it('should call the getWorldData and getSpeciesData fetchApi fetch', () => {
+    expect(window.fetch).not.toHaveBeenCalled();
+
     getPeopleData(peopleArray)
 
     expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/planets/1/')
@@ -345,6 +350,8 @@ describe('getVehicles', () => {
 
 
   it('should call the fetch in fetchApi with the correct params', async () => {
+    expect(window.fetch).not.toHaveBeenCalled();
+
     const vehicleResult = await getVehicles()
     const expected = 'https://swapi.co/api/vehicles/'
 
