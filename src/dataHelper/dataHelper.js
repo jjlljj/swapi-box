@@ -3,6 +3,8 @@ const fetchApi = async url => {
 
   const response = await fetch(url)
 
+
+
   if (response.status <= 200) {
     return await response.json()
   } else {
@@ -21,7 +23,6 @@ const getScroll = async () => {
     return { title, episode, text: opening_crawl }
   } 
   catch(er) {
-    console.log(er)
     const error = new Error('Failed to fetch film')
     return error
   }
@@ -50,7 +51,6 @@ const getPeople = async ( page=1 ) => {
 
     return allPeople
   } catch(er) {
-
     const error = new Error('Failed to fetch People')
   }
 }
@@ -67,24 +67,45 @@ const getPeopleData = peopleArray => {
 }
 
 const getWorldData = async url => {
-  const { name, population } = await fetchApi(url)
-
-  return { world: name, population }
+  try {
+    const { name, population } = await fetchApi(url)
+    
+    return { world: name, population }
+  } 
+  catch(er) {
+    const error = new Error('Failed to get world data')
+    
+    return error
+  }
 }
 
 const getSpeciesData = async url => {
-  const { name } = await fetchApi(url)
+  try { 
+    const { name } = await fetchApi(url)
+    
+    return name
+  }
+  catch(er) {
+    const error = new Error('Failed to get species data')
 
-  return name
+    return error
+  }
+
 }
 
 // Get Planets
 const getPlanets = async ( page=1 ) => {
-  const url = `https://swapi.co/api/planets/?page=${page}`
-  const arrayOfPlanets = await fetchApi(url)
-  const allPlanets = await getPlanetData(arrayOfPlanets.results)
+  try {
+    const url = `https://swapi.co/api/planets/?page=${page}`
+    const arrayOfPlanets = await fetchApi(url)
+    const allPlanets = await getPlanetData(arrayOfPlanets.results)
 
-  return allPlanets
+    return allPlanets
+  }
+  catch(er) {
+    const error = new Error('Failed to fetch planets')
+    return error
+  }
 }
 
 const getPlanetData = planetArray => {
@@ -110,9 +131,15 @@ const getResidents = residentsArray => {
 
 // Get Vehicles
 const getVehicles = async () => {
-  const url = 'https://swapi.co/api/vehicles/'
-  const arrayOfVehicles = await fetchApi(url)
-  return getVehicleData(arrayOfVehicles.results)
+  try {
+    const url = 'https://swapi.co/api/vehicles/'
+    const arrayOfVehicles = await fetchApi(url)
+    return getVehicleData(arrayOfVehicles.results)
+  } 
+  catch(er) {
+    const error = new Error('Failed to get vehicles')
+    return error
+  }
 }
 
 const getVehicleData = vehiclesArray => {

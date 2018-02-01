@@ -1,19 +1,40 @@
 /* eslint-disable */
 
-import { fetchApi, getScroll, randomNum, getPeople, getPeopleData, getWorldData, getSpeciesData, getPlanets, getPlanetData, getResidents, getVehicles, getVehicleData } from './dataHelper.js'
+import { fetchApi, getScroll, randomNum, getPeople, 
+  getPeopleData, getWorldData, getSpeciesData, getPlanets, 
+  getPlanetData, getResidents, getVehicles, 
+  getVehicleData } from './dataHelper.js'
 
 describe('fetchApi', () => {
+  
+  let url
 
-  window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      json: () => Promise.resolve({ results: 'Returned results' })
-    }))
+  beforeAll(() => {
+    url = 'https://swapi.co/api/films/1'
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve({ results: 'Returned results' })
+      })
+    )
+  })
 
   it('calls fetch with the correct params', () => {
-   const url = 'https://swapi.co/api/films/1'
    const expectParams = ['https://swapi.co/api/films/1']
 
     fetchApi(url)
     expect(window.fetch).toHaveBeenCalledWith(...expectParams)
+  })
+
+  it('should throw an error if the response is not okay', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        json: () => Promise.resolve(
+          status: 500,
+        )
+      })
+    )
+
+    expect(fetchApi(url)).rejects.toEqual(Error('Could not fetch data'))
   })
 
 })
@@ -27,7 +48,6 @@ describe('randomNum', () => {
   })
 })
 
-
 describe('getScroll', () => {
 
   let mockMovieData
@@ -40,6 +60,7 @@ describe('getScroll', () => {
     }
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
         json: () => Promise.resolve( mockMovieData )
       })
     )
@@ -48,7 +69,7 @@ describe('getScroll', () => {
   it('should call the fetch in fetchApi', () => {
     getScroll()
 
-    expect(window.fetch()).toHaveBeenCalled
+    expect(window.fetch).toHaveBeenCalled()
   })
 
   it('should return the expected formatted movie data', async () => {
@@ -62,6 +83,16 @@ describe('getScroll', () => {
     expect(movieResults).toEqual(expected)
   })
 
+  it('should catch errors', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject()
+    )
+
+    const movieResult = await getScroll()
+    const expected = Error('Failed to fetch film')
+
+    expect(movieResult).toEqual(expected)
+  })
+
 })
 
 describe('getSpeciesData', () => {
@@ -71,10 +102,11 @@ describe('getSpeciesData', () => {
 
   beforeAll(() => {
     url = 'https://swapi.co/api/species/1/'
-    mockSpeciesData = {"name": "Human", 
-        "classification": "mammal"}
+    mockSpeciesData = { "name": "Human", 
+        "classification": "mammal" }
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
         json: () => Promise.resolve(
           mockSpeciesData
         )
@@ -92,6 +124,15 @@ describe('getSpeciesData', () => {
     const speciesResult = await getSpeciesData(url)
     
     expect(speciesResult).toEqual('Human')
+  })
+
+  it('should catch errors', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise. reject())
+
+    const speciesResult = await getSpeciesData(url)
+    const expected = Error('Failed to get species data')
+
+    expect(speciesResult).toEqual(expected)
   })
 })
 
@@ -115,6 +156,7 @@ describe('getWorldData', () => {
     }
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
         json: () => Promise.resolve( mockWorldData )
       })
     )
@@ -133,9 +175,20 @@ describe('getWorldData', () => {
     expect(worldResult).toEqual(expected)
   })
 
+  it('should catch errors', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise. reject())
+
+    const worldResult = await getWorldData(url)
+    const expected = Error('Failed to get world data')
+
+    expect(worldResult).toEqual(expected)
+  })
+
 })
 
-describe('getPeopleData', () => {
+
+
+describe.skip('getPeopleData', () => {
 
   let url
   let mockPeopleData = {}
@@ -144,6 +197,7 @@ describe('getPeopleData', () => {
     url = 'https://swapi.co/api/people/1/'
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
         json: () => Promise.resolve( mockPeopleData )
       })
     )
@@ -152,7 +206,6 @@ describe('getPeopleData', () => {
   it('should not pass', () => {
     expect(false).toEqual(true)
   })
-
 })
 
 describe.skip('getPeople', () => {
@@ -163,6 +216,7 @@ describe.skip('getPeople', () => {
   beforeAll(() => {
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
         json: () => Promise.resolve( mockPeople )
       })
     )
@@ -171,18 +225,139 @@ describe.skip('getPeople', () => {
   it('should not pass', () => {
     expect(false).toEqual(true)
   })
-
 })
 
 
-//  fetchAPi
+describe('getVehicleData', () => {
 
-// getScroll
-//   randomNum
+  let mockVehiclesArray 
+
+  beforeAll(() => {
+
+    mockVehiclesArray = [
+      {
+        "name": "Sand Crawler", 
+        "model": "Digger Crawler", 
+        "passengers": "30", 
+        "consumables": "2 months", 
+        "vehicle_class": "wheeled", 
+      },
+      {
+        "name": "T-16 skyhopper", 
+        "model": "T-16 skyhopper", 
+        "passengers": "1", 
+        "consumables": "0", 
+        "vehicle_class": "repulsorcraft", 
+      }
+    ]
+  })
+
+  it('it should return the cleaned data from the vehicles array', () => {
+    const vehicleData = getVehicleData(mockVehiclesArray)
+    const expected = [ 
+      {
+        name: "Sand Crawler",
+        Model: "Digger Crawler",
+        "Vehicle Class": "wheeled",
+        Passengers: "30"
+      },
+      {
+        name: "T-16 skyhopper",
+        Model: "T-16 skyhopper",
+        "Vehicle Class": "repulsorcraft",
+        Passengers: "1"
+      }
+    ]
+
+    expect(vehicleData).toEqual(expected)
+  })
+})
+
+describe('getVehicles', () => {
+
+  let mockVehiclesArray
+  let mockVehiclesData
+
+  beforeAll(()=> {
+    mockVehiclesArray = [
+      "url": "https://swapi.co/api/vehicles/4/",
+      "url": "https://swapi.co/api/vehicles/6/",
+    ]
+
+    mockVehiclesData = {
+      results: [
+        {
+          "name": "Sand Crawler", 
+          "model": "Digger Crawler", 
+          "passengers": "30", 
+          "consumables": "2 months", 
+          "vehicle_class": "wheeled", 
+        },
+        {
+          "name": "T-16 skyhopper", 
+          "model": "T-16 skyhopper", 
+          "passengers": "1", 
+          "consumables": "0", 
+          "vehicle_class": "repulsorcraft", 
+        }
+      ]
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve(  mockVehiclesData )
+      })
+    )
+  })
+
+
+  it('should call the fetch in fetchApi with the correct params', async () => {
+    const vehicleResult = await getVehicles()
+    const expected = 'https://swapi.co/api/vehicles/'
+
+    expect(window.fetch).toHaveBeenCalledWith(expected)
+  }) 
+
+  it('should return the expected cleaned data', async () => {
+    const vehicleResult = await getVehicles()
+    const expected = [
+      {
+        name: "Sand Crawler",
+        Model: "Digger Crawler",
+        "Vehicle Class": "wheeled",
+        Passengers: "30"
+      },
+      {
+        name: "T-16 skyhopper",
+        Model: "T-16 skyhopper",
+        "Vehicle Class": "repulsorcraft",
+        Passengers: "1"
+      }
+    ]
+
+    expect(vehicleResult).toEqual(expected)
+  })
+
+  it('should handle errors', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise. reject())
+
+    const vehicleResult = await getVehicles()
+    const expected = Error('Failed to get vehicles')
+
+    expect(vehicleResult).toEqual(expected)
+  })
+  
+})
+
+//  fetchApi          V
+
+      
+// getScroll          V
+//   randomNum        V
 
 // getPeople
-//   getPeopleData
-//   getWorldData
+//   getPeopleData    
+//   getWorldData     V
 //   getSpeciesData   V
 
 // getPlanets
