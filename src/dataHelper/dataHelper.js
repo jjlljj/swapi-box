@@ -122,13 +122,19 @@ const getPlanetData = planetArray => {
 }
 
 const getResidents = residentsArray => {
-  const unresolved = residentsArray.map(async residentUrl => {
-    let { name } = await fetchApi(residentUrl)
+  try {
+    const unresolved = residentsArray.map(async residentUrl => {
+      let { name } = await fetchApi(residentUrl)
 
-    return name
-  })
+      return name
+    })
 
-  return Promise.all(unresolved)
+    return Promise.all(unresolved)
+  }
+  catch(er) {
+    const error = new Error('Failed to get planet residents')
+    return error
+  }
 }
 
 // Get Vehicles

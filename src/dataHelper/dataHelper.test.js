@@ -313,8 +313,51 @@ describe('getPeople', () => {
 
 describe('getResidents', () => {
 
-  it('should not pass', ()=> {
-    expect(false).toEqual(true)
+  let mockResidents
+  let mockResidentsArray
+
+  beforeAll(() => {
+
+    mockResidents = {
+      name: 'C-3PO'
+    }
+
+    mockResidentsArray = [
+      "https://swapi.co/api/people/1/", 
+      "https://swapi.co/api/people/2/",
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve(mockResidents)
+      })
+    )
+
+  })
+
+  it('should call the fetch in fetchApi with the correct params', ()=> {
+    expect(window.fetch).not.toHaveBeenCalled();
+
+    getResidents(mockResidentsArray)
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/1/')
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/2/')
+  })
+
+  it('should return the expected array of resident names', async () => {
+    const expected = [ 'C-3PO', 'C-3PO' ]
+    const residentsResult = await getResidents(mockResidentsArray)
+
+    expect(residentsResult).toEqual(expected)
+  })
+
+  it('should catch errors', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+
+    const residentResult =  await getResidents()
+    const expected = Error('Failed to get planet residents')
+
+    expect(residentResult).toEqual(expected)
   })
 })
 
