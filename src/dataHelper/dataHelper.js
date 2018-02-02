@@ -1,11 +1,16 @@
 
 const fetchApi = async url => {
-  const response = await fetch(url)
+  try {
+    const response = await fetch(url)
 
-  if (response.status <= 200) {
-    return await response.json()
-  } else {
-    throw (new Error('Could not fetch data'))
+    if (response.status <= 200) {
+      return await response.json()
+    } else {
+      throw(new Error('Bad status code'))
+    }
+  } catch(err) {
+    //throw(new Error('Could not fetch data'))
+    throw(err)
   }
 }
 
@@ -18,10 +23,8 @@ const getScroll = async () => {
     const episode = toNumerals[episode_id - 1]
 
     return { title, episode, text: opening_crawl }
-  } 
-  catch(er) {
-    const error = new Error('Failed to fetch film')
-    return error
+  } catch(er) {
+    throw Error('Failed to fetch film')
   }
 }
 
@@ -45,9 +48,8 @@ const getPeople = async ( page=1 ) => {
   try { const url = `https://swapi.co/api/people/?page=${page}`
     const arrayOfPeople = await fetchApi(url)
     return await getPeopleData(arrayOfPeople.results) 
-  } 
-  catch(er) {
-    const error = new Error('Failed to get People')
+  } catch(er) {
+    throw new Error('Failed to get People')
   }
 }
 
@@ -62,10 +64,8 @@ const getPeopleData = peopleArray => {
     })
       
     return Promise.all(unresolved)
-  }
-  catch(er) {
-    const error = new Error('Failed to get data for all people')
-    return error
+  } catch(er) {
+    throw new Error('Failed to get data for all people')
   }
 }
 
@@ -74,11 +74,8 @@ const getWorldData = async url => {
     const { name, population } = await fetchApi(url)
     
     return { world: name, population }
-  } 
-  catch(er) {
-    const error = new Error('Failed to get world data')
-    
-    return error
+  } catch(er) {
+    throw new Error('Failed to get world data')
   }
 }
 
@@ -87,13 +84,9 @@ const getSpeciesData = async url => {
     const { name } = await fetchApi(url)
    
     return { Species: name }
+  } catch(er) {
+    throw new Error('Failed to get species data')
   }
-  catch(er) {
-    const error = new Error('Failed to get species data')
-
-    return error
-  }
-
 }
 
 // Get Planets
@@ -103,10 +96,8 @@ const getPlanets = async ( page=1 ) => {
     const arrayOfPlanets = await fetchApi(url)
     const allPlanets = await getPlanetData(arrayOfPlanets.results)
     return allPlanets
- }
-  catch(er) {
-    const error = new Error('Failed to get planets')
-    return error
+ } catch(er) {
+    throw error = new Error('Failed to get planets')
   }
 }
 
@@ -120,10 +111,8 @@ const getPlanetData = planetArray => {
     })
 
     return Promise.all(unresolved)
-  }
-  catch(er) {
-    const error = new Error('Failed to get planet data')
-    return error
+  } catch(er) {
+    throw new Error('Failed to get planet data')
   }
 }
 
@@ -138,8 +127,7 @@ const getResidents = residentsArray => {
     return Promise.all(unresolved)
   }
   catch(er) {
-    const error = new Error('Failed to get planet residents')
-    return error
+    throw new Error('Failed to get planet residents')
   }
 }
 
@@ -149,10 +137,8 @@ const getVehicles = async () => {
     const url = 'https://swapi.co/api/vehicles/'
     const arrayOfVehicles = await fetchApi(url)
     return getVehicleData(arrayOfVehicles.results)
-  } 
-  catch(er) {
-    const error = new Error('Failed to get vehicles')
-    return error
+  } catch(er) {
+    throw new Error('Failed to get vehicles')
   }
 }
 

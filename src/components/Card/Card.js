@@ -3,8 +3,8 @@ import propTypes from 'prop-types';
 import './Card.css';
 
 const Card = ({ card }) => {
-  const cardKeys = Object.keys( card ).filter(item => item !== "name")
-  console.log(cardKeys)
+  const cardKeys = Object.keys( card ).filter(item => !(item === "name" || item === "favorite"))
+  const { name, favorite } = card
 
   const renderedContent = cardKeys.map( key => {
     return ( <li>{key}: {card[key]}</li>)
@@ -12,7 +12,8 @@ const Card = ({ card }) => {
 
   return (
     <div className="card"> 
-      <h3>{card.name}</h3>
+      <h3>{name}</h3>
+      <button>FAV</button>
       <ul>
         { renderedContent }
       </ul>
