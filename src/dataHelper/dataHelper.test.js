@@ -440,6 +440,8 @@ describe('getPlanetData', () => {
   })
 
   it('should catch errors', async () => { 
+    // why is it not catching an error here??
+
     window.fetch = jest.fn().mockImplementation(() => Promise.reject())
 
     const planetDataReturn =  await getPlanetData(mockPlanetsArray)
@@ -451,8 +453,90 @@ describe('getPlanetData', () => {
 
 describe('getPlanets', () => {
 
-  it('should not pass', () => {
-    expect(false).toEqual(true)
+  let mockPlanetsArray
+
+  beforeAll(() => {
+
+     mockPlanetsArray = [
+      { "name": "Tatooine", 
+        "rotation_period": "23", 
+        "orbital_period": "304", 
+        "diameter": "10465", 
+        "climate": "arid", 
+        "gravity": "1 standard", 
+        "terrain": "desert", 
+        "surface_water": "1", 
+        "population": "200000", 
+        "residents": [
+          "https://swapi.co/api/people/1/", 
+          "https://swapi.co/api/people/2/", 
+          "https://swapi.co/api/people/4/", 
+          "https://swapi.co/api/people/6/",
+        ]
+      },
+      { "name": "Danatooine", 
+        "rotation_period": "45", 
+        "orbital_period": "87", 
+        "diameter": "2", 
+        "climate": "arid", 
+        "gravity": "1 standard", 
+        "terrain": "desert", 
+        "surface_water": "1", 
+        "population": "200000", 
+        "residents": [
+          "https://swapi.co/api/people/1/", 
+          "https://swapi.co/api/people/2/", 
+        ]
+      },
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve({ results: mockPlanetsArray })
+      })
+    )
+
+  })
+
+  it('should call the fetch in FetchApi with the correct params', () => {
+    expect(window.fetch).not.toHaveBeenCalled();
+
+    getPlanets()
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/planets/?page=1')
+  })
+
+  it('should return the expected array of objects with keys and values', async () => {
+
+    const planetsResponse = await getPlanets()
+    const expected = [
+      {
+        "Climate": "arid", 
+        "Population": "200000", 
+        "Residents": ", , , ", 
+        "Terrain": "desert", 
+        "name": "Tatooine"
+      }, 
+      {
+        "Climate": "arid", 
+        "Population": "200000", 
+        "Residents": ", ", 
+        "Terrain": "desert", 
+        "name": "Danatooine"
+      }
+    ]
+
+    expect(await planetsResponse).toEqual(expected)
+
+  })
+
+  it('should catch errors', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+
+    const planetsResponse = await getPlanets()
+    const expected = Error('Failed to get planets')
+
+    expect(await planetsResponse).toEqual(expected)
   })
 })
 

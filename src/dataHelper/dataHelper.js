@@ -102,11 +102,10 @@ const getPlanets = async ( page=1 ) => {
     const url = `https://swapi.co/api/planets/?page=${page}`
     const arrayOfPlanets = await fetchApi(url)
     const allPlanets = await getPlanetData(arrayOfPlanets.results)
-
     return allPlanets
-  }
+ }
   catch(er) {
-    const error = new Error('Failed to fetch planets')
+    const error = new Error('Failed to get planets')
     return error
   }
 }
@@ -123,7 +122,7 @@ const getPlanetData = planetArray => {
     return Promise.all(unresolved)
   }
   catch(er) {
-    const error = new Error('Failed to fetch planet data')
+    const error = new Error('Failed to get planet data')
     return error
   }
 }
