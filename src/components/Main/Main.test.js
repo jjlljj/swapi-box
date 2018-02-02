@@ -7,10 +7,10 @@ import Main from './Main';
 
 describe('Main', () => {
 
-  it('should exist', () => {
+  it('should match snapshot', () => {
     const renderedComponent = shallow(<Main />);
 
-    expect(renderedComponent).toBeDefined();
+    expect(renderedComponent).toMatchSnapshot();
   })
 
 })
