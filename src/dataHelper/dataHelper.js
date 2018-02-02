@@ -45,7 +45,8 @@ const getPeople = async ( page=1 ) => {
   try { const url = `https://swapi.co/api/people/?page=${page}`
     const arrayOfPeople = await fetchApi(url)
     return await getPeopleData(arrayOfPeople.results) 
-  } catch(er) {
+  } 
+  catch(er) {
     const error = new Error('Failed to get People')
   }
 }
@@ -111,14 +112,20 @@ const getPlanets = async ( page=1 ) => {
 }
 
 const getPlanetData = planetArray => {
-  const unresolved = planetArray.map(async ({ name, terrain, climate, population, residents }) => {
-    let allResidents = await getResidents(residents)
-    const Residents = allResidents.join(", ")
+  try {
+    const unresolved = planetArray.map(async ({ name, terrain, climate, population, residents }) => {
+      let allResidents = await getResidents(residents)
+      const Residents = allResidents.join(", ")
 
-    return { name, Terrain: terrain, Climate: climate, Population: population, Residents }
-  })
-    
-  return Promise.all(unresolved)
+      return { name, Terrain: terrain, Climate: climate, Population: population, Residents }
+    })
+
+    return Promise.all(unresolved)
+  }
+  catch(er) {
+    const error = new Error('Failed to fetch planet data')
+    return error
+  }
 }
 
 const getResidents = residentsArray => {

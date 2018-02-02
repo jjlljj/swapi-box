@@ -362,9 +362,90 @@ describe('getResidents', () => {
 })
 
 describe('getPlanetData', () => {
+  let mockPlanetsArray
 
-  it('should not pass', () => {
-    expect(false).toEqual(true)
+  beforeAll(() => {
+
+    mockPlanetsArray = [
+      { "name": "Tatooine", 
+        "rotation_period": "23", 
+        "orbital_period": "304", 
+        "diameter": "10465", 
+        "climate": "arid", 
+        "gravity": "1 standard", 
+        "terrain": "desert", 
+        "surface_water": "1", 
+        "population": "200000", 
+        "residents": [
+          "https://swapi.co/api/people/1/", 
+          "https://swapi.co/api/people/2/", 
+          "https://swapi.co/api/people/4/", 
+          "https://swapi.co/api/people/6/",
+        ]
+      },
+      { "name": "Danatooine", 
+        "rotation_period": "45", 
+        "orbital_period": "87", 
+        "diameter": "2", 
+        "climate": "arid", 
+        "gravity": "1 standard", 
+        "terrain": "desert", 
+        "surface_water": "1", 
+        "population": "200000", 
+        "residents": [
+          "https://swapi.co/api/people/1/", 
+          "https://swapi.co/api/people/2/", 
+        ]
+      },
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve({ name: undefined })
+      })
+    )
+
+  })
+
+  it('should call the fetch in fetchApi with the correct params', () => {
+    expect(window.fetch).not.toHaveBeenCalled();
+
+    getPlanetData(mockPlanetsArray)
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/1/')
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/2/')
+  })
+
+  it('should return the expected array of data keys and values', async () => {
+    const planetDataReturn = await getPlanetData(mockPlanetsArray)
+    const expected = [
+      {
+        "name": "Tatooine",
+        "Climate": "arid", 
+        "Population": "200000", 
+        "Residents": ", , , ", 
+        "Terrain": "desert", 
+      },
+      { 
+        "name": "Danatooine",
+        "Climate": "arid", 
+        "Population": "200000", 
+        "Residents": ", ", 
+        "Terrain": "desert", 
+      }
+    ]
+
+    expect(planetDataReturn).toEqual(expected)
+
+  })
+
+  it('should catch errors', async () => { 
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+
+    const planetDataReturn =  await getPlanetData(mockPlanetsArray)
+    const expected = Error('Failed to fetch planet data')
+
+    expect( PlanetDataReturn).toEqual(expected)
   })
 })
 
