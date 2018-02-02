@@ -6,17 +6,17 @@ const fetchApi = async url => {
     if (response.status <= 200) {
       return await response.json()
     } else {
-      throw(new Error('Bad status code'))
+      throw new Error('Bad status code')
     }
   } catch(err) {
-    throw new Error('Could not fetch data')
+     throw new Error('Could not fetch data')
   }
 }
 
 // Get movie text opening page
 const getScroll = async () => {
   try {
-    const num = 9 || randomNum(7)
+    const num = randomNum(7)
     const url = `https://swapi.co/api/films/${num}`
     const { title, episode_id, opening_crawl } = await fetchApi(url)
     const episode = toNumerals[episode_id - 1]
@@ -95,8 +95,8 @@ const getPlanets = async ( page=1 ) => {
     const arrayOfPlanets = await fetchApi(url)
     const allPlanets = await getPlanetData(arrayOfPlanets.results)
     return allPlanets
- } catch(er) {
-    throw error = new Error('Failed to get planets')
+  } catch(er) {
+    //throw error = new Error('Failed to get planets')
   }
 }
 

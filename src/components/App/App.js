@@ -18,7 +18,12 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const openingText = await getScroll()
+    let openingText = undefined
+    try {
+      openingText = await getScroll()
+    } catch(er) { 
+      console.log(er)
+    }
 
     this.setState({openingText}, async ()=> {
       let { people, planets, vehicles } = this.lastFromSto()
