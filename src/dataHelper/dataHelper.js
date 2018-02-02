@@ -120,7 +120,7 @@ const getResidents = residentsArray => {
     const unresolved = residentsArray.map(async residentUrl => {
       let { name } = await fetchApi(residentUrl)
 
-      return name
+      return name 
     })
 
     return Promise.all(unresolved)

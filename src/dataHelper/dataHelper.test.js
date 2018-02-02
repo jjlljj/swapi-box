@@ -219,10 +219,10 @@ describe('getPeople', ()=> {
 
   })
 
-  describe.skip('getPeopleData', () => {
+  describe('getPeopleData', () => {
 
     let peopleArray 
-    let mockPeopleData
+    let mockWorldData
 
     beforeAll(() => {
       
@@ -239,9 +239,21 @@ describe('getPeople', ()=> {
         }
       ]
 
+      mockWorldData = {
+        "name": "Tatooine", 
+        "rotation_period": "23", 
+        "orbital_period": "304", 
+        "diameter": "10465", 
+        "climate": "arid", 
+        "gravity": "1 standard", 
+        "terrain": "desert", 
+        "surface_water": "1", 
+        "population": "200000", 
+      }
+
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
           status: 200,
-          json: () => Promise.resolve()
+          json: () => Promise.resolve(mockWorldData)
         })
       )
     })
@@ -258,18 +270,18 @@ describe('getPeople', ()=> {
     it('should return an object with the expected keys and values', async () => {
       const peopleData = await getPeopleData(peopleArray)
       const expected = [
-        { name: 'Luke skywalker', Homeword: undefined, Species: undefined, Population: undefined },
-        { name: 'C-3PO', Homeword: undefined, Species: undefined, Population: undefined },
+        { name: 'Luke skywalker', Homeword: 'Tatooine', Species: 'Tatooine', Population: '200000' },
+        { name: 'C-3PO', Homeword: 'Tatooine', Species: 'Tatooine', Population: '200000' },
         ]
 
       expect(peopleData).toEqual(expected)
     })
 
-    it('should catch errors', () => {
+    it('should catch errors', async () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ status: 500 }))
 
-      const peopleResult = getPeopleData()
-      const expected = Error('Failed to get data for all people')
+      const peopleResult = getPeopleData(peopleArray)
+      const expected = Error('Failed to get world data')
 
       expect(peopleResult).rejects.toEqual(expected)
     })
@@ -387,13 +399,13 @@ describe('getPlanets', () => {
       expect(residentsResult).toEqual(expected)
     })
 
-    it.skip('should catch errors', async () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ status: 500 }))
+    it('should catch errors', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject({ status: 500 }))
 
-      const residentResult = await getResidents(mockResidentsArray)
-      const expected = Error('Failed to get planet residents')
+      const residentResult = getResidents(mockResidentsArray)
+      const expected = Error('Could not fetch data')
 
-      expect(residentResult).rejects.toCatchError()
+      expect(residentResult).rejects.toEqual(expected)
     })
   })
 
@@ -475,13 +487,13 @@ describe('getPlanets', () => {
 
     })
 
-    it.skipd('should catch errors', async () => { 
+    it.skip('should catch errors', async () => { 
 
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-        status: 400
+        status: 500
       }))
 
-      const planetDataReturn =  getPlanetData(mockPlanetsArray)
+      const planetDataReturn = await getPlanetData(mockPlanetsArray)
       const expected = Error('Failed to fetch planet data')
 
       expect(PlanetDataReturn).resolves.toEqual(expected)
