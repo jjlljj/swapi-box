@@ -9,8 +9,7 @@ const fetchApi = async url => {
       throw(new Error('Bad status code'))
     }
   } catch(err) {
-    //throw(new Error('Could not fetch data'))
-    throw(err)
+    throw new Error('Could not fetch data')
   }
 }
 
