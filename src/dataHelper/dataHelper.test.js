@@ -475,7 +475,7 @@ describe('getPlanets', () => {
 
     })
 
-    it.skip('should catch errors', async () => { 
+    it.skipd('should catch errors', async () => { 
 
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 400
