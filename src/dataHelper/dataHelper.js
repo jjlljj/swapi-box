@@ -58,8 +58,9 @@ const getPeopleData = peopleArray => {
       
       let { world, population } = await getWorldData(homeworld)
       let { Species } = await getSpeciesData(species)
+      const cardType = 'people'
 
-      return { name, Homeword: world, Species, Population: population }
+      return { name, cardType, Homeword: world, Species, Population: population }
     })
       
     return Promise.all(unresolved)
@@ -105,8 +106,9 @@ const getPlanetData = planetArray => {
     const unresolved = planetArray.map(async ({ name, terrain, climate, population, residents }) => {
       let allResidents = await getResidents(residents)
       const Residents = allResidents.join(", ")
+      const cardType = 'planets'
 
-      return { name, Terrain: terrain, Climate: climate, Population: population, Residents }
+      return { name, cardType, Terrain: terrain, Climate: climate, Population: population, Residents}
     })
 
     return Promise.all(unresolved)
@@ -143,7 +145,8 @@ const getVehicles = async () => {
 
 const getVehicleData = vehiclesArray => {
   return vehiclesArray.map(({ name, model, vehicle_class, passengers }) => {
-    return { name, Model: model, "Vehicle Class": vehicle_class, Passengers: passengers }  
+    const cardType = 'vehicles'
+    return { name, cardType, Model: model, "Vehicle Class": vehicle_class, Passengers: passengers }  
   })
 }
 

@@ -5,12 +5,6 @@ import { fetchApi, getScroll, randomNum, getPeople,
   getPlanetData, getResidents, getVehicles, 
   getVehicleData } from './dataHelper.js'
 
-
-// to fix
-// getResidents 3
-// getPlanetData 3
-// getPlanets 3
-
 /////////////////////////////
 /// API FETCH //////////////
 describe('API fetch', () => {
@@ -268,8 +262,8 @@ describe('getPeople', ()=> {
     it('should return an object with the expected keys and values', async () => {
       const peopleData = await getPeopleData(peopleArray)
       const expected = [
-        { name: 'Luke skywalker', Homeword: 'Tatooine', Species: 'Tatooine', Population: '200000' },
-        { name: 'C-3PO', Homeword: 'Tatooine', Species: 'Tatooine', Population: '200000' },
+        { name: 'Luke skywalker', cardType: "people", Homeword: 'Tatooine', Species: 'Tatooine', Population: '200000' },
+        { name: 'C-3PO', cardType: "people", Homeword: 'Tatooine', Species: 'Tatooine', Population: '200000' },
         ]
 
       expect(peopleData).toEqual(expected)
@@ -325,15 +319,17 @@ describe('getPeople', ()=> {
       const expected = [
         {
           name: 'Luke skywalker',
+          cardType: "people",
           Population: undefined,
           Species: undefined,
-          HomeWorld: undefined,
+          Homeworld: undefined,
         },
         {
           name: 'C-3PO',
+          cardType: "people",
           Population: undefined,
           Species: undefined,
-          HomeWorld: undefined,
+          Homeworld: undefined,
         }
       ]
 
@@ -467,6 +463,7 @@ describe('getPlanets', () => {
       const expected = [
         {
           "name": "Tatooine",
+          "cardType": "planets",
           "Climate": "arid", 
           "Population": "200000", 
           "Residents": ", , , ", 
@@ -474,6 +471,7 @@ describe('getPlanets', () => {
         },
         { 
           "name": "Danatooine",
+          "cardType": "planets",
           "Climate": "arid", 
           "Population": "200000", 
           "Residents": ", ", 
@@ -560,6 +558,7 @@ describe('getPlanets', () => {
       const expected = [
         {
           "Climate": "arid", 
+          "cardType": "planets",
           "Population": "200000", 
           "Residents": ", , , ", 
           "Terrain": "desert", 
@@ -567,6 +566,7 @@ describe('getPlanets', () => {
         }, 
         {
           "Climate": "arid", 
+          "cardType": "planets",
           "Population": "200000", 
           "Residents": ", ", 
           "Terrain": "desert", 
@@ -623,12 +623,14 @@ describe('getVehicles', () => {
       const expected = [ 
         {
           name: "Sand Crawler",
+          "cardType": "vehicles",
           Model: "Digger Crawler",
           "Vehicle Class": "wheeled",
           Passengers: "30"
         },
         {
           name: "T-16 skyhopper",
+          "cardType": "vehicles",
           Model: "T-16 skyhopper",
           "Vehicle Class": "repulsorcraft",
           Passengers: "1"
@@ -691,12 +693,14 @@ describe('getVehicles', () => {
       const expected = [
         {
           name: "Sand Crawler",
+          "cardType": "vehicles",
           Model: "Digger Crawler",
           "Vehicle Class": "wheeled",
           Passengers: "30"
         },
         {
           name: "T-16 skyhopper",
+          "cardType": "vehicles",
           Model: "T-16 skyhopper",
           "Vehicle Class": "repulsorcraft",
           Passengers: "1"
