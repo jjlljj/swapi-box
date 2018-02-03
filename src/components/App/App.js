@@ -14,6 +14,7 @@ class App extends Component {
       people: null,
       planets: null,
       vehicles: null,
+      favorites: [],
     };
   }
 
@@ -26,22 +27,22 @@ class App extends Component {
     }
 
     this.setState({openingText}, async ()=> {
-      let { people, planets, vehicles } = this.lastFromSto()
-      
-      this.setState({ people, planets, vehicles })
+      let { people, planets, vehicles, favorites } = this.lastFromSto()
+
+      this.setState({ people, planets, vehicles, favorites })
     })
   }
 
-  dataToSto({ people, planets, vehicles }) {
-    const toSet = JSON.stringify({ people, planets, vehicles })
+  dataToSto({ people, planets, vehicles, favorites }) {
+    const toSet = JSON.stringify({ people, planets, vehicles, favorites })
     localStorage.setItem('swapiData', toSet)
   }
 
   lastFromSto() {
     const swapiData = localStorage.getItem('swapiData')
-    const { people, planets, vehicles } = JSON.parse(swapiData) || this.state 
+    const { people, planets, vehicles, favorites } = JSON.parse(swapiData) || this.state 
 
-    return { people, planets, vehicles }
+    return { people, planets, vehicles, favorites }
   }
 
   fetchPeople = async () => {
@@ -65,6 +66,18 @@ class App extends Component {
     })
   }
 
+  addToFavorites = (card) => {
+    const { favorites } = this.state
+    const nonDuplicates = favorites ? favorites.filter(fav => fav.name !== card.name) : []
+
+    const newFavorites = [ card, ...nonDuplicates ]
+
+    this.setState({ favorites: newFavorites}, () => {
+      this.dataToSto(this.state)
+    })
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -73,9 +86,11 @@ class App extends Component {
           fetchPeople={this.fetchPeople}
           fetchPlanets={this.fetchPlanets}
           fetchVehicles={this.fetchVehicles}
+          addToFav={this.addToFavorites}
           people={this.state.people}
           planets={this.state.planets}
           vehicles={this.state.vehicles}
+          favorites={this.state.favorites}
          />
       </div>
     );

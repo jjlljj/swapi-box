@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import './Card.css';
 
-const Card = ({ card }) => {
+const Card = ({ card, addToFav }) => {
   const cardKeys = Object.keys( card ).filter(item => !(item === "name" || item === "favorite"))
   const { name, favorite } = card
 
@@ -13,7 +13,9 @@ const Card = ({ card }) => {
   return (
     <div className="card"> 
       <h3>{name}</h3>
-      <button>FAV</button>
+      <button
+        onClick={() => { addToFav(card) }}
+      >FAV</button>
       <ul>
         { renderedContent }
       </ul>
