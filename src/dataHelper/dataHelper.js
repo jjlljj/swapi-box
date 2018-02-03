@@ -96,7 +96,7 @@ const getPlanets = async ( page=1 ) => {
     const allPlanets = await getPlanetData(arrayOfPlanets.results)
     return allPlanets
   } catch(er) {
-    //throw error = new Error('Failed to get planets')
+    throw new Error('Failed to get planets')    
   }
 }
 

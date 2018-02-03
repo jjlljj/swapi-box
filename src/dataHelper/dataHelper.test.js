@@ -7,7 +7,6 @@ import { fetchApi, getScroll, randomNum, getPeople,
 
 
 // to fix
-// getPeopleData 1, 2, 3
 // getResidents 3
 // getPlanetData 3
 // getPlanets 3
@@ -398,8 +397,8 @@ describe('getPlanets', () => {
       expect(residentsResult).toEqual(expected)
     })
 
-    it.skip('should catch errors', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.reject({ status: 500 }))
+    it('should catch errors', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ status: 500 }))
 
       const residentResult = getResidents(mockResidentsArray)
       const expected = Error('Could not fetch data')
@@ -493,9 +492,10 @@ describe('getPlanets', () => {
       }))
 
       const planetDataReturn = await getPlanetData(mockPlanetsArray)
-      const expected = Error('Failed to fetch planet data')
+      
+      const expected = Error('Failed to get planet data')
 
-      expect(PlanetDataReturn).resolves.toEqual(expected)
+      expect(PlanetDataReturn).rejects.toEqual('could not')
     })
   })
 
@@ -578,13 +578,15 @@ describe('getPlanets', () => {
 
     })
 
-    it.skip('should catch errors', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve())
+    it('should catch errors', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.response({
+        status: 500
+      }))
 
       const planetsResponse = getPlanets()
       const expected = Error('Failed to get planets')
 
-      expect(planetsResponse).resolves.toEqual(expected)
+      expect(planetsResponse).rejects.toEqual(expected)
     })
   })
 })
