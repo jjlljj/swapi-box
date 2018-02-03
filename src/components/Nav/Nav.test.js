@@ -10,7 +10,7 @@ describe('Nav', () => {
   it('should exist', () => {
     const renderedComponent = shallow(<Nav />);
 
-    expect(renderedComponent).toBeDefined();
+    expect(renderedComponent).toMatchSnapshot()
   })
 
 })

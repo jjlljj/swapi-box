@@ -6,7 +6,7 @@ import Card from '../Card/Card';
 class Vehicles extends Component {
    
   async componentDidMount() {
-    if (await !this.props.cards) this.props.fetchData();
+    if (!this.props.cards) this.props.fetchData();
   }
 
   renderCards() {
