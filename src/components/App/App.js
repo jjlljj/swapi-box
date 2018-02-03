@@ -28,17 +28,11 @@ class App extends Component {
     this.setState({openingText}, async ()=> {
       let { people, planets, vehicles } = this.lastFromSto()
         
-      people = people || await getPeople()
       planets = planets || await getPlanets()
       vehicles = vehicles || await getVehicles()
 
       this.setState({ people, planets, vehicles })
     })
-
-
-    
-    // this.dataToSto({ people, planets, vehicles })
-
   }
 
   dataToSto({ people, planets, vehicles }) {
@@ -53,20 +47,36 @@ class App extends Component {
     return { people, planets, vehicles }
   }
 
+  fetchPeople = async () => {
+    const people = await getPeople()
+    this.setState({ people })
+  }
+
+  fetchPlanets = async () => {
+    const planets = await getPlanets()
+    this.setState({ planets })
+  }
+
+  fetchVehicles = async () => {
+    const vehicles = await getVehicles()
+    this.setState({ vehicles })
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <Main 
-          getPeople={this.getPeople}
-          getPlanets={this.getPlanets}
-          getVehicles={this.getVehicles}
-          cards={'cardyo'}
+          fetchPeople={this.fetchPeople}
+          fetchPlanets={this.fetchPlanets}
+          fetchVehicles={this.fetchVehicles}
+          people={this.state.people}
+          planets={this.state.planets}
+          vehicles={this.state.vehicles}
          />
       </div>
     );
   }
 }
-        //<Welcome {...this.state.openingText}/>
 
 export default App;

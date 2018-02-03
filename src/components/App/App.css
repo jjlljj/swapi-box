@@ -1,4 +1,10 @@
 .App {
   background-color: #1A1A1A;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
