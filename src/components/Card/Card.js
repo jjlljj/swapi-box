@@ -14,7 +14,7 @@ const Card = ({ card, addToFav }) => {
   const renderButton = addToFav ? favButton : ""
 
   const renderedContent = cardKeys.map( key => {
-    return ( <li>{key}: {card[key]}</li>)
+    return ( <li>{key}: {card[key]}</li> )
   })
 
   return (

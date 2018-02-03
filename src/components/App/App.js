@@ -82,6 +82,8 @@ class App extends Component {
 
 
   render() {
+    let { openingText, people, planets, vehicles, favorites } = this.state
+
     return (
       <div className="App">
         <Header />
@@ -90,10 +92,11 @@ class App extends Component {
           fetchPlanets={this.fetchPlanets}
           fetchVehicles={this.fetchVehicles}
           addToFav={this.manageFavorites}
-          people={this.state.people}
-          planets={this.state.planets}
-          vehicles={this.state.vehicles}
-          favorites={this.state.favorites}
+          openingText={openingText}
+          people={people}
+          planets={planets}
+          vehicles={vehicles}
+          favorites={favorites}
          />
       </div>
     );
