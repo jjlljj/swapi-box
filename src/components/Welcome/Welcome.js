@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import { string } from 'prop-types';
 import './Welcome.css';
 
 const Welcome = ({ episode, title, text}) => {
@@ -15,6 +15,12 @@ const Welcome = ({ episode, title, text}) => {
       </div>
     </section>
   );
+};
+
+Welcome.propTypes = {
+  episode: string,
+  title: string,
+  text: string
 };
 
 export default Welcome;
