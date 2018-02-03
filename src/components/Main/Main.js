@@ -13,7 +13,7 @@ const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, addToFav, people, plan
     <div> 
       <Switch>
         
-        <Route path='/people' activeClassName="active"
+        <Route path='/people' 
           render={() => (
             <People 
               fetchData={fetchPeople} 
@@ -22,7 +22,7 @@ const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, addToFav, people, plan
           )}
         />
 
-        <Route path='/planets' 
+        <Route path='/planets' activeClassName="active"
           render={() => (
             <Planets 
               fetchData={fetchPlanets} 

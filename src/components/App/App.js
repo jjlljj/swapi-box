@@ -74,7 +74,8 @@ class App extends Component {
 
     card.favorite = !card.favorite
 
-    const newFavorites = nonDuplicates.length === favorites.length ? [ card, ...nonDuplicates ] : nonDuplicates
+    const newFavorites = nonDuplicates.length === favorites.length ? 
+                        [ card, ...nonDuplicates ] : nonDuplicates
     const toStore = [ card, ...filterStored ]
 
     this.setState({ favorites:  newFavorites, [cardType]: toStore }, () => {
