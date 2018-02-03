@@ -1,16 +1,16 @@
 /* eslint-disable */
 
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import Card from './Card';
 
 describe('Card', () => {
 
-  it('should exist', () => {
+  it('should not pass', () => {
     // const renderedComponent = shallow(<Card/>);
 
-    // expect(renderedComponent).toBeDefined();
+    expect(true).toEqual(false)
   })
 
 })
