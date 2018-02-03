@@ -5,3 +5,19 @@
 .site-header h1 {
   font-size: 48px;
 }
+
+.nav-menu div {
+  display: inline-block;
+  background: blue;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 6px;
+  width: 100px;
+  height:100%;
+}
+
+.active {
+  background: #feda4a;
+}

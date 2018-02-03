@@ -10,8 +10,9 @@ class Planets extends Component {
   }
 
   renderCards() {
-    return this.props.cards.map(card => {
-            return (<Card card={card} />)
+    const { addToFav, cards } = this.props
+    return cards.map(card => {
+            return (<Card card={card} addToFav={ addToFav }/>)
     })
   }
 

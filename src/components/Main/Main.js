@@ -8,23 +8,25 @@ import Planets from '../Planets/Planets';
 import People from '../People/People';
 import Vehicles from '../Vehicles/Vehicles';
 
-const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, people, planets, vehicles }) => {
+const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, addToFav, people, planets, vehicles, favorites, openingText }) => {
   return (
     <div> 
       <Switch>
         
-        <Route path='/people' activeClassName="active"
+        <Route path='/people' 
           render={() => (
             <People 
               fetchData={fetchPeople} 
+              addToFav={addToFav}
               cards={people} />
           )}
         />
 
-        <Route path='/planets' 
+        <Route path='/planets' activeClassName="active"
           render={() => (
             <Planets 
               fetchData={fetchPlanets} 
+              addToFav={addToFav}
               cards={planets} />
           )}
         />
@@ -32,8 +34,22 @@ const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, people, planets, vehic
         <Route path='/vehicles' 
           render={() => (
             <Vehicles 
-              fetchData={fetchVehicles} 
+              fetchData={fetchVehicles}       
               cards={vehicles} /> 
+          )}
+        />
+
+        <Route path='/favorites' 
+          render={() => (
+            <Favorites 
+              addToFav={addToFav}
+              cards={favorites} /> 
+          )}
+        />
+
+        <Route path='/' 
+          render={() => (
+            <Welcome {...openingText} />
           )}
         />
         

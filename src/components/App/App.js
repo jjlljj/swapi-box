@@ -14,6 +14,7 @@ class App extends Component {
       people: null,
       planets: null,
       vehicles: null,
+      favorites: [],
     };
   }
 
@@ -25,44 +26,66 @@ class App extends Component {
       console.log(er)
     }
 
-    this.setState({openingText}, async ()=> {
-      let { people, planets, vehicles } = this.lastFromSto()
-        
-      planets = planets || await getPlanets()
-      vehicles = vehicles || await getVehicles()
+    this.setState({openingText}, () => {
+      let { people, planets, vehicles, favorites } = this.lastFromSto()
 
-      this.setState({ people, planets, vehicles })
+      this.setState({ people, planets, vehicles, favorites })
     })
   }
 
-  dataToSto({ people, planets, vehicles }) {
-    const toSet = JSON.stringify({ people, planets, vehicles })
+  dataToSto({ people, planets, vehicles, favorites }) {
+    const toSet = JSON.stringify({ people, planets, vehicles, favorites })
     localStorage.setItem('swapiData', toSet)
   }
 
   lastFromSto() {
     const swapiData = localStorage.getItem('swapiData')
-    const { people, planets, vehicles } = JSON.parse(swapiData) || this.state 
+    const { people, planets, vehicles, favorites } = JSON.parse(swapiData) || this.state 
 
-    return { people, planets, vehicles }
+    return { people, planets, vehicles, favorites }
   }
 
   fetchPeople = async () => {
     const people = await getPeople()
-    this.setState({ people })
+    this.setState({ people }, () => {
+      this.dataToSto(this.state)
+    })
   }
 
   fetchPlanets = async () => {
     const planets = await getPlanets()
-    this.setState({ planets })
+    this.setState({ planets }, () => {
+      this.dataToSto(this.state)
+    })
   }
 
   fetchVehicles = async () => {
     const vehicles = await getVehicles()
-    this.setState({ vehicles })
+    this.setState({ vehicles }, () => {
+      this.dataToSto(this.state)
+    })
+  }
+
+  manageFavorites = (card) => {
+    const { favorites } = this.state 
+    const { name, cardType } = card
+    const nonDuplicates = favorites ? favorites.filter(fav => fav.name !== name) : []
+    const filterStored = this.state[cardType].filter(stored => stored.name !== name) 
+
+    card.favorite = !card.favorite
+
+    const newFavorites = nonDuplicates.length === favorites.length ? 
+                        [ card, ...nonDuplicates ] : nonDuplicates
+    const toStore = [ card, ...filterStored ]
+
+    this.setState({ favorites:  newFavorites, [cardType]: toStore }, () => {
+      this.dataToSto(this.state)
+    })
   }
 
   render() {
+    let { openingText, people, planets, vehicles, favorites } = this.state
+
     return (
       <div className="App">
         <Header />
@@ -70,9 +93,12 @@ class App extends Component {
           fetchPeople={this.fetchPeople}
           fetchPlanets={this.fetchPlanets}
           fetchVehicles={this.fetchVehicles}
-          people={this.state.people}
-          planets={this.state.planets}
-          vehicles={this.state.vehicles}
+          addToFav={this.manageFavorites}
+          openingText={openingText}
+          people={people}
+          planets={planets}
+          vehicles={vehicles}
+          favorites={favorites}
          />
       </div>
     );

@@ -31,6 +31,14 @@ ShallowWrapper {
                 path="/vehicles"
                 render={[Function]}
         />
+        <Route
+                path="/favorites"
+                render={[Function]}
+        />
+        <Route
+                path="/"
+                render={[Function]}
+        />
 </Switch>,
     },
     "ref": null,
@@ -51,6 +59,14 @@ ShallowWrapper {
 />,
           <Route
             path="/vehicles"
+            render={[Function]}
+/>,
+          <Route
+            path="/favorites"
+            render={[Function]}
+/>,
+          <Route
+            path="/"
             render={[Function]}
 />,
         ],
@@ -94,6 +110,30 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "path": "/favorites",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "path": "/",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": [Function],
     },
@@ -119,6 +159,14 @@ ShallowWrapper {
                     path="/vehicles"
                     render={[Function]}
           />
+          <Route
+                    path="/favorites"
+                    render={[Function]}
+          />
+          <Route
+                    path="/"
+                    render={[Function]}
+          />
 </Switch>,
       },
       "ref": null,
@@ -139,6 +187,14 @@ ShallowWrapper {
 />,
             <Route
               path="/vehicles"
+              render={[Function]}
+/>,
+            <Route
+              path="/favorites"
+              render={[Function]}
+/>,
+            <Route
+              path="/"
               render={[Function]}
 />,
           ],
@@ -176,6 +232,30 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "path": "/vehicles",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "path": "/favorites",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "path": "/",
               "render": [Function],
             },
             "ref": null,

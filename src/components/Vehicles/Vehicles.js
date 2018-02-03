@@ -6,11 +6,12 @@ import Card from '../Card/Card';
 class Vehicles extends Component {
    
   async componentDidMount() {
-    if (!this.props.cards) this.props.fetchData()
+    if (await !this.props.cards) this.props.fetchData()
   }
 
   renderCards() {
-    return this.props.cards.map(card => {
+    const {  cards } = this.props
+    return cards.map(card => {
             return (<Card card={card} />)
     })
   }
