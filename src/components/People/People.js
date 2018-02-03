@@ -3,32 +3,23 @@ import propTypes from 'prop-types';
 import './People.css';
 import Card from '../Card/Card';
 
-class CardContainer extends Component {
-  constructor(props) {
-    super()
-    this.state ={ 
-      cards: []
-    }
-  }
+class People extends Component {
    
   async componentDidMount() {
-    let cards = this.props.cards
-    this.setState({ cards })
+    if (!this.props.cards) this.props.fetchData()
   }
 
   renderCards() {
-    return this.state.cards.map(card => {
+    return this.props.cards.map(card => {
             return (<Card card={card} />)
-          })
+    })
   }
 
   render() {
-    
-
     return (
       <div> 
         { 
-          this.state.cards &&
+          this.props.cards &&
           this.renderCards()
         }
       </div>
@@ -36,4 +27,4 @@ class CardContainer extends Component {
   }
 };
 
-export default CardContainer;
+export default People;
