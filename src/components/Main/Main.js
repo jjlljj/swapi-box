@@ -1,14 +1,25 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import { arrayOf, func, object} from 'prop-types';
 import './Main.css';
-import { Switch, Route } from 'react-router-dom'
-import Welcome from '../Welcome/Welcome'
+import { Switch, Route } from 'react-router-dom';
+import Welcome from '../Welcome/Welcome';
 import Favorites from '../Favorites/Favorites';
 import Planets from '../Planets/Planets';
 import People from '../People/People';
 import Vehicles from '../Vehicles/Vehicles';
 
-const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, addToFav, people, planets, vehicles, favorites, openingText }) => {
+const Main = ({ 
+  fetchPeople, 
+  fetchPlanets, 
+  fetchVehicles, 
+  addToFav, 
+  people, 
+  planets, 
+  vehicles, 
+  favorites, 
+  openingText 
+}) => {
+
   return (
     <div> 
       <Switch>
@@ -53,9 +64,21 @@ const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, addToFav, people, plan
           )}
         />
         
-    </Switch>
+      </Switch>
     </div>
   );
+};
+
+Main.propTypes = {
+  fetchPeople: func, 
+  fetchPlanets: func, 
+  fetchVehicles: func, 
+  addToFav: func, 
+  people: arrayOf(object), 
+  planets: arrayOf(object), 
+  vehicles: arrayOf(object), 
+  favorites: arrayOf(object), 
+  openingText: object
 };
 
 export default Main;

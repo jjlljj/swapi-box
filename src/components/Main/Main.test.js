@@ -12,5 +12,4 @@ describe('Main', () => {
 
     expect(renderedComponent).toMatchSnapshot();
   })
-
 })

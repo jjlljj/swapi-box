@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from '../Main/Main';
-import Header from '../Header/Header'
-import { getScroll, getPeople, getPlanets, getVehicles } from '../../dataHelper/dataHelper.js'
-import Welcome from '../Welcome/Welcome'
-import Card from '../Card/Card'
+import Header from '../Header/Header';
+import { getScroll, 
+  getPeople, 
+  getPlanets, 
+  getVehicles } from '../../dataHelper/dataHelper.js';
 
 class App extends Component {
   constructor() {
@@ -14,77 +15,81 @@ class App extends Component {
       people: null,
       planets: null,
       vehicles: null,
-      favorites: [],
+      favorites: []
     };
   }
 
   async componentDidMount() {
-    let openingText = undefined
+    let openingText = undefined;
     try {
-      openingText = await getScroll()
-    } catch(er) { 
-      console.log(er)
+      openingText = await getScroll();
+    } catch (er) {
+      console.log(er)  //eslint-disable-line
     }
 
     this.setState({openingText}, () => {
-      let { people, planets, vehicles, favorites } = this.lastFromSto()
+      let { people, planets, vehicles, favorites } = this.lastFromSto();
 
-      this.setState({ people, planets, vehicles, favorites })
-    })
+      this.setState({ people, planets, vehicles, favorites });
+    });
   }
 
   dataToSto({ people, planets, vehicles, favorites }) {
-    const toSet = JSON.stringify({ people, planets, vehicles, favorites })
-    localStorage.setItem('swapiData', toSet)
+    const toSet = JSON.stringify({ people, planets, vehicles, favorites });
+    localStorage.setItem('swapiData', toSet);
   }
 
   lastFromSto() {
-    const swapiData = localStorage.getItem('swapiData')
-    const { people, planets, vehicles, favorites } = JSON.parse(swapiData) || this.state 
+    const swapiData = localStorage.getItem('swapiData');
+    const { people, planets, vehicles, favorites } = JSON.parse(swapiData) 
+      || this.state;
 
-    return { people, planets, vehicles, favorites }
+    return { people, planets, vehicles, favorites };
   }
 
   fetchPeople = async () => {
-    const people = await getPeople()
+    const people = await getPeople();
     this.setState({ people }, () => {
-      this.dataToSto(this.state)
-    })
+      this.dataToSto(this.state);
+    });
   }
 
   fetchPlanets = async () => {
-    const planets = await getPlanets()
+    const planets = await getPlanets();
     this.setState({ planets }, () => {
-      this.dataToSto(this.state)
-    })
+      this.dataToSto(this.state);
+    });
   }
 
   fetchVehicles = async () => {
-    const vehicles = await getVehicles()
+    const vehicles = await getVehicles();
     this.setState({ vehicles }, () => {
-      this.dataToSto(this.state)
-    })
+      this.dataToSto(this.state);
+    });
   }
 
   manageFavorites = (card) => {
-    const { favorites } = this.state 
-    const { name, cardType } = card
-    const nonDuplicates = favorites ? favorites.filter(fav => fav.name !== name) : []
-    const filterStored = this.state[cardType].filter(stored => stored.name !== name) 
+    const { favorites } = this.state;
+    const { name, cardType } = card;
+    const nonDuplicates = favorites ? 
+      favorites.filter(fav => fav.name !== name) : [];
+    const filterStored = this.state[cardType].filter(stored => { 
+      return stored.name !== name;
+    });
 
-    card.favorite = !card.favorite
+    card.favorite = !card.favorite;
 
     const newFavorites = nonDuplicates.length === favorites.length ? 
-                        [ card, ...nonDuplicates ] : nonDuplicates
-    const toStore = [ card, ...filterStored ]
+      [card, ...nonDuplicates] : nonDuplicates;
+    const toStore = [card, ...filterStored];
 
     this.setState({ favorites:  newFavorites, [cardType]: toStore }, () => {
-      this.dataToSto(this.state)
-    })
+      this.dataToSto(this.state);
+    });
   }
 
   render() {
-    let { openingText, people, planets, vehicles, favorites } = this.state
+    let { openingText, people, planets, vehicles, favorites } = this.state;
 
     return (
       <div className="App">
@@ -99,7 +104,7 @@ class App extends Component {
           planets={planets}
           vehicles={vehicles}
           favorites={favorites}
-         />
+        />
       </div>
     );
   }
