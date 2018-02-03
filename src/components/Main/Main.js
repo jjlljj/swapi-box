@@ -43,6 +43,7 @@ const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, addToFav, people, plan
         <Route path='/favorites' 
           render={() => (
             <Favorites 
+              addToFav={addToFav}
               cards={favorites} /> 
           )}
         />

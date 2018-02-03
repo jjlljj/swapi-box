@@ -15,7 +15,7 @@ const Card = ({ card, addToFav }) => {
       <h3>{name}</h3>
       <button
         onClick={() => { addToFav(card) }}
-      >FAV</button>
+      >&#9734;</button>
       <ul>
         { renderedContent }
       </ul>

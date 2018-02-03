@@ -3,24 +3,20 @@ import propTypes from 'prop-types';
 import './Favorites.css';
 import Card from '../Card/Card';
 
-class Planets extends Component {
+const Favorites = ({ cards, addToFav }) => {
 
-  renderCards() {
-    return this.props.cards.map(card => {
-            return (<Card card={card} />)
-    })
-  }
+  const renderedCards = cards.map(card => {
+    return (<Card card={card} addToFav={addToFav}/>)
+  })
 
-  render() {
-    return (
-      <div className="card-container"> 
-        { 
-          this.props.cards &&
-          this.renderCards()
-        }
-      </div>
-    );
-  }
+  return (
+    <div className="card-container"> 
+      { 
+        cards &&
+        renderedCards
+      }
+    </div>
+  );
 };
 
-export default Planets;
+export default Favorites;

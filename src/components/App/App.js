@@ -26,7 +26,7 @@ class App extends Component {
       console.log(er)
     }
 
-    this.setState({openingText}, async ()=> {
+    this.setState({openingText}, () => {
       let { people, planets, vehicles, favorites } = this.lastFromSto()
 
       this.setState({ people, planets, vehicles, favorites })
@@ -66,17 +66,20 @@ class App extends Component {
     })
   }
 
-  addToFavorites = (card) => {
-    const { favorites } = this.state
+  manageFavorites = (card) => {
+    const { favorites } = this.state 
     const nonDuplicates = favorites ? favorites.filter(fav => fav.name !== card.name) : []
 
-    const newFavorites = [ card, ...nonDuplicates ]
+    card.favorite = !card.favorite
 
-    this.setState({ favorites: newFavorites}, () => {
+    const newFavorites = nonDuplicates.length === favorites.length ? [ card, ...nonDuplicates ] : nonDuplicates
+
+    this.setState({ favorites:  newFavorites }, () => {
       this.dataToSto(this.state)
     })
-
   }
+
+
 
   render() {
     return (
@@ -86,7 +89,7 @@ class App extends Component {
           fetchPeople={this.fetchPeople}
           fetchPlanets={this.fetchPlanets}
           fetchVehicles={this.fetchVehicles}
-          addToFav={this.addToFavorites}
+          addToFav={this.manageFavorites}
           people={this.state.people}
           planets={this.state.planets}
           vehicles={this.state.vehicles}
