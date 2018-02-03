@@ -2,37 +2,38 @@ import React from 'react';
 import propTypes from 'prop-types';
 import './Main.css';
 import { Switch, Route } from 'react-router-dom'
-import CardContainer from '../CardContainer/CardContainer' 
+import Welcome from '../Welcome/Welcome'
+import Favorites from '../Favorites/Favorites';
+import Planets from '../Planets/Planets';
+import People from '../People/People';
+import Vehicles from '../Vehicles/Vehicles';
 
-const Main = ({ getPeople, getVehicles, getPlanets, cards}) => {
+const Main = ({ getPeople, getVehicles, getPlanets, people }) => {
   return (
     <div> 
       <Switch>
         
         <Route path='/people' activeClassName="active"
           render={() => (
-            <CardContainer 
-              name={'people'}
+            <People 
               fetchData={getPlanets} 
-              cards={cards} />
+              cards={people} />
           )}
         />
 
         <Route path='/planets' 
           render={() => (
-            <CardContainer 
-              name={'planets'}
+            <Planets 
               fetchData={getPlanets} 
-              cards={cards} />
+              cards={people} />
           )}
         />
 
         <Route path='/vehicles' 
           render={() => (
-            <CardContainer 
-              name={'vehicles'} 
+            <Vehicles 
               fetchData={getVehicles} 
-              cards={cards} /> 
+              cards={people} /> 
           )}
         />
         

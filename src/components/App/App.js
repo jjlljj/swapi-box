@@ -61,7 +61,7 @@ class App extends Component {
           getPeople={this.getPeople}
           getPlanets={this.getPlanets}
           getVehicles={this.getVehicles}
-          cards={'cardyo'}
+          people={this.state.people}
          />
       </div>
     );
