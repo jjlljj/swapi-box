@@ -10,9 +10,9 @@ class Vehicles extends Component {
   }
 
   renderCards() {
-    const { addToFav, cards } = this.props
+    const {  cards } = this.props
     return cards.map(card => {
-            return (<Card card={card} addToFav={ addToFav }/>)
+            return (<Card card={card} />)
     })
   }
 

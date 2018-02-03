@@ -35,7 +35,7 @@ const Main = ({ fetchPeople, fetchPlanets, fetchVehicles, addToFav, people, plan
           render={() => (
             <Vehicles 
               fetchData={fetchVehicles} 
-              addToFav={addToFav}
+          
               cards={vehicles} /> 
           )}
         />
