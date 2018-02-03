@@ -33,7 +33,6 @@ class App extends Component {
 
       this.setState({ people, planets, vehicles })
     })
-    // this.dataToSto({ people, planets, vehicles })
   }
 
   dataToSto({ people, planets, vehicles }) {
