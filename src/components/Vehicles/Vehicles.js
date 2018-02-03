@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
+import { arrayOf, object, func } from 'prop-types';
 import './Vehicles.css';
 import Card from '../Card/Card';
 
 class Vehicles extends Component {
    
   async componentDidMount() {
-    if (await !this.props.cards) this.props.fetchData()
+    if (await !this.props.cards) this.props.fetchData();
   }
 
   renderCards() {
-    const {  cards } = this.props
+    const {  cards } = this.props;
     return cards.map(card => {
-            return (<Card card={card} />)
-    })
+      return (<Card card={card} key={card.name} />);
+    });
   }
 
   render() {
@@ -26,6 +26,11 @@ class Vehicles extends Component {
       </div>
     );
   }
+}
+
+Vehicles.propTypes = {
+  cards: arrayOf(object),
+  fetchData: func
 };
 
 export default Vehicles;
