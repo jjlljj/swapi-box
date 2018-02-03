@@ -19,11 +19,11 @@ ShallowWrapper {
     "props": Object {
       "children": <Switch>
         <Route
-                activeClassName="active"
                 path="/people"
                 render={[Function]}
         />
         <Route
+                activeClassName="active"
                 path="/planets"
                 render={[Function]}
         />
@@ -49,11 +49,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Route
-            activeClassName="active"
             path="/people"
             render={[Function]}
 />,
           <Route
+            activeClassName="active"
             path="/planets"
             render={[Function]}
 />,
@@ -78,7 +78,6 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "activeClassName": "active",
             "path": "/people",
             "render": [Function],
           },
@@ -91,6 +90,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "activeClassName": "active",
             "path": "/planets",
             "render": [Function],
           },
@@ -147,11 +147,11 @@ ShallowWrapper {
       "props": Object {
         "children": <Switch>
           <Route
-                    activeClassName="active"
                     path="/people"
                     render={[Function]}
           />
           <Route
+                    activeClassName="active"
                     path="/planets"
                     render={[Function]}
           />
@@ -177,11 +177,11 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Route
-              activeClassName="active"
               path="/people"
               render={[Function]}
 />,
             <Route
+              activeClassName="active"
               path="/planets"
               render={[Function]}
 />,
@@ -206,7 +206,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "activeClassName": "active",
               "path": "/people",
               "render": [Function],
             },
@@ -219,6 +218,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "activeClassName": "active",
               "path": "/planets",
               "render": [Function],
             },
