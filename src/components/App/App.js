@@ -53,12 +53,12 @@ class App extends Component {
   }
 
   fetchPlanets = async () => {
-    const planets = await getPeople()
+    const planets = await getPlanets()
     this.setState({ planets })
   }
 
   fetchVehicles = async () => {
-    const vehicles = await getPeople()
+    const vehicles = await getVehicles()
     this.setState({ vehicles })
   }
 
@@ -68,8 +68,8 @@ class App extends Component {
         <Header />
         <Main 
           fetchPeople={this.fetchPeople}
-          getPlanets={this.getPlanets}
-          getVehicles={this.getVehicles}
+          fetchPlanets={this.fetchPlanets}
+          fetchVehicles={this.fetchVehicles}
           people={this.state.people}
           planets={this.state.planets}
           vehicles={this.state.vehicles}
