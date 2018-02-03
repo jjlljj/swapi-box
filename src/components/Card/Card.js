@@ -6,7 +6,9 @@ const Card = ({ card, addToFav }) => {
   const cardKeys = Object.keys( card ).filter(item => !(item === "name" || item === "favorite" || item === "cardType"))
   const { name, favorite } = card
 
-  const favButton = (<button
+  const classList = favorite ? 'favorite' : ''
+
+  const favButton = (<button className={classList}
                       onClick={() => { addToFav(card) }}>
                       &#9734;
                     </button>)

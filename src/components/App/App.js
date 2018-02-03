@@ -67,12 +67,17 @@ class App extends Component {
   }
 
   manageFavorites = (card) => {
-    const { favorites, people, planets } = this.state 
-    const nonDuplicates = favorites ? favorites.filter(fav => fav.name !== card.name) : []
+    const { favorites } = this.state 
+    const { name, cardType } = card
+    const nonDuplicates = favorites ? favorites.filter(fav => fav.name !== name) : []
+    const filterStored = this.state[cardType].filter(stored => stored.name !== name) 
+
+    card.favorite = !card.favorite
 
     const newFavorites = nonDuplicates.length === favorites.length ? [ card, ...nonDuplicates ] : nonDuplicates
+    const toStore = [ card, ...filterStored ]
 
-    this.setState({ favorites:  newFavorites }, () => {
+    this.setState({ favorites:  newFavorites, [cardType]: toStore }, () => {
       this.dataToSto(this.state)
     })
   }

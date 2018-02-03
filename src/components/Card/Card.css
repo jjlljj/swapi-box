@@ -18,3 +18,7 @@
 .card li {
   margin: 10px 20px;
 }
+
+.favorite {
+  background-color: purple;
+}
