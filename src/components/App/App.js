@@ -27,10 +27,7 @@ class App extends Component {
 
     this.setState({openingText}, async ()=> {
       let { people, planets, vehicles } = this.lastFromSto()
-        
-      planets = planets || await getPlanets()
-      vehicles = vehicles || await getVehicles()
-
+      
       this.setState({ people, planets, vehicles })
     })
   }
@@ -49,17 +46,23 @@ class App extends Component {
 
   fetchPeople = async () => {
     const people = await getPeople()
-    this.setState({ people })
+    this.setState({ people }, () => {
+      this.dataToSto(this.state)
+    })
   }
 
   fetchPlanets = async () => {
     const planets = await getPlanets()
-    this.setState({ planets })
+    this.setState({ planets }, () => {
+      this.dataToSto(this.state)
+    })
   }
 
   fetchVehicles = async () => {
     const vehicles = await getVehicles()
-    this.setState({ vehicles })
+    this.setState({ vehicles }, () => {
+      this.dataToSto(this.state)
+    })
   }
 
   render() {
