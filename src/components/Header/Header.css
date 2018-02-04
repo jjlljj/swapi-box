@@ -8,14 +8,14 @@
   width: 600px;
 }
 
-.favorites-nav-btn {
-  background: black;
-  margin: 20px;
+@media screen and (max-width: 670px) {
+  .banner-text {
+    width: 400px;
+  }
 }
 
-.favorites-nav-btn a {
-  display: block;
-  padding: 6px;
-  width: 100px;
-  height:100%;
+@media screen and (max-width: 450px) {
+  .banner-text {
+    width: 300px;
+  }
 }
