@@ -9,9 +9,9 @@ const Favorites = ({ cards, addToFav }) => {
     return (<Card card={card} addToFav={addToFav} key={card.name}/>);
   });
 
-  const noFavorites = ( <h3 className="no-fav">No Favorites Found</h3> )
+  const noFavorites = ( <h3 className="no-fav">No Favorites Found</h3> );
 
-  const rendered = cards.length ? renderedCards : noFavorites
+  const rendered = cards.length ? renderedCards : noFavorites;
 
   return (
     <div className="card-container"> 
