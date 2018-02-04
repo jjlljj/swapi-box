@@ -62,15 +62,9 @@ describe('App', () => {
     beforeEach(() => {
       renderedComponent = shallow(<App />, {disableLifecycleMethods: true});
 
-      mockMovieData = {
-        "title": "A New Hope", 
-        "episode_id": 4, 
-        "opening_crawl": "It is a period of civil war...", 
-      }
-
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
           status: 200,
-          json: () => Promise.resolve({ mockMovieData })
+          json: () => Promise.resolve({})
         })
       )
     })
@@ -130,9 +124,27 @@ describe('App', () => {
 
   describe('fetchPeople', () => {
     let renderedComponent
+    let expected
 
     beforeEach(() => {
       renderedComponent = shallow(<App />, {disableLifecycleMethods: true});
+
+      expected = [
+        {
+          name: 'Luke skywalker',
+          cardType: "people",
+          Population: 10000,
+          Species: 'human',
+          Homeworld: "Tatooine",
+        },
+        {
+          name: 'C-3PO',
+          cardType: "people",
+          Population: 3244,
+          Species: 'droid',
+          Homeworld: "somewhere",
+        }
+      ]
 
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
           status: 200,
@@ -150,28 +162,150 @@ describe('App', () => {
     })
 
     it('should set state', async () => {
-      const expected = [
-        {
-          name: 'Luke skywalker',
-          cardType: "people",
-          Population: 10000,
-          Species: 'human',
-          Homeworld: "Tatooine",
-        },
-        {
-          name: 'C-3PO',
-          cardType: "people",
-          Population: 3244,
-          Species: 'droid',
-          Homeworld: "somewhere",
-        }
-      ]
 
       await renderedComponent.instance().fetchPeople()
       renderedComponent.update()
 
       expect(renderedComponent.state().people).toEqual(expected)
     })
+
+    it('should set storage', async () => {
+
+      await renderedComponent.instance().fetchPeople()
+      renderedComponent.update()
+      const inStorage = JSON.parse(global.localStorage.getItem('swapiData'))
+
+      expect(JSON.parse(inStorage).people).toEqual(expected)
+
+    })
+
+  })
+
+  describe('fetchPlanets', () => {
+    let renderedComponent
+    let expected
+
+    beforeEach(() => {
+      renderedComponent = shallow(<App />, {disableLifecycleMethods: true});
+
+      expected = [
+        {
+          Climate: "murky",
+          Population: "unknown",
+          Residents: "",
+          Terrain: "swamp, jungles",
+          cardType: "planets",
+          favorite: true,
+          name: "Dagobah"
+        },
+        {
+          Climate: "temperate, tropical", 
+          Population: "1000",
+          Residents: "",
+          Terrain: "jungle, rainforests",
+          cardType: "planets",
+          favorite: true,
+          name: "Yavin IV"
+        }
+      ]
+
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve({  })
+        })
+      )
+    })
+
+    it('should call the fetch function with the expected param', () => {
+      expect(window.fetch).not.toHaveBeenCalled()     
+
+      renderedComponent.instance().fetchPlanets()
+      
+      expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/planets/')
+    })
+
+    it('should set state', async () => {
+
+      await renderedComponent.instance().fetchPlanets()
+      renderedComponent.update()
+
+      expect(renderedComponent.state().planets).toEqual(expected)
+    })
+
+    it('should set storage', async () => {
+
+      await renderedComponent.instance().fetchPlanets()
+      renderedComponent.update()
+      const inStorage = JSON.parse(global.localStorage.getItem('swapiData'))
+
+      expect(JSON.parse(inStorage).planets).toEqual(expected)
+
+    })
+  })
+
+  describe('fetchVehicles', () => {
+    let renderedComponent
+    let expected
+
+    beforeEach(() => {
+      renderedComponent = shallow(<App />, {disableLifecycleMethods: true});
+
+      expected = [
+        {
+          Model: "Digger Crawler",
+          Passengers: "30",
+          "Vehicle Class": "wheeled",
+          cardType: "vehicles",
+          name: "Sand Crawler"
+        },
+        {
+          Model: "T-16 skyhopper",  
+          Passengers: "1",
+          "Vehicle Class": "repulsorcraft",
+          cardType: "vehicles",
+          name: "T-16 skyhopper"
+        }
+      ]
+
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve({  })
+        })
+      )
+    })
+
+    it('should call the fetch function with the expected param', () => {
+      expect(window.fetch).not.toHaveBeenCalled()     
+
+      renderedComponent.instance().fetchVehicles()
+      
+      expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/vehicles/')
+    })
+
+    it('should set state', async () => {
+
+      await renderedComponent.instance().fetchVehicles()
+      renderedComponent.update()
+
+      expect(renderedComponent.state().vehicles).toEqual(expected)
+    })
+
+    it('should set storage', async () => {
+
+      await renderedComponent.instance().fetchVehicles()
+      renderedComponent.update()
+      const inStorage = JSON.parse(global.localStorage.getItem('swapiData'))
+
+      expect(JSON.parse(inStorage).vehicles).toEqual(expected)
+
+    })
+
+  })
+
+  describe('manageFavorites', () => {
+
+
+
 
   })
 
