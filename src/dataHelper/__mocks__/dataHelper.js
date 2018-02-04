@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const getScroll = () => {
   fetch('https://swapi.co/api/films/')
   return {
