@@ -21,115 +21,14 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="crawl-wrap"
->
+      "children": Array [
         <div
-                className="title-wrap"
-        >
-                <h4>
-                        Episode IV
-                </h4>
-                <h2>
-                        A New Hope
-                </h2>
-        </div>
-        <p>
-                It is a period of civil war...
-        </p>
-</div>,
-      "className": "welcome-crawl",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="title-wrap"
->
-            <h4>
-                        Episode IV
-            </h4>
-            <h2>
-                        A New Hope
-            </h2>
-</div>,
-          <p>
-            It is a period of civil war...
-</p>,
-        ],
-        "className": "crawl-wrap",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <h4>
-                Episode IV
-</h4>,
-              <h2>
-                A New Hope
-</h2>,
-            ],
-            "className": "title-wrap",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Episode IV",
-              },
-              "ref": null,
-              "rendered": "Episode IV",
-              "type": "h4",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "A New Hope",
-              },
-              "ref": null,
-              "rendered": "A New Hope",
-              "type": "h2",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "It is a period of civil war...",
-          },
-          "ref": null,
-          "rendered": "It is a period of civil war...",
-          "type": "p",
-        },
-      ],
-      "type": "div",
-    },
-    "type": "section",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
+          className="stars"
+/>,
+        <div
+          className="stars-animate"
+/>,
+        <div
           className="crawl-wrap"
 >
           <div
@@ -146,10 +45,34 @@ ShallowWrapper {
                     It is a period of civil war...
           </p>
 </div>,
-        "className": "welcome-crawl",
+      ],
+      "className": "welcome-crawl",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "stars",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "stars-animate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -229,6 +152,147 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="stars"
+/>,
+          <div
+            className="stars-animate"
+/>,
+          <div
+            className="crawl-wrap"
+>
+            <div
+                        className="title-wrap"
+            >
+                        <h4>
+                                    Episode IV
+                        </h4>
+                        <h2>
+                                    A New Hope
+                        </h2>
+            </div>
+            <p>
+                        It is a period of civil war...
+            </p>
+</div>,
+        ],
+        "className": "welcome-crawl",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "stars",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "stars-animate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="title-wrap"
+>
+                <h4>
+                                Episode IV
+                </h4>
+                <h2>
+                                A New Hope
+                </h2>
+</div>,
+              <p>
+                It is a period of civil war...
+</p>,
+            ],
+            "className": "crawl-wrap",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h4>
+                    Episode IV
+</h4>,
+                  <h2>
+                    A New Hope
+</h2>,
+                ],
+                "className": "title-wrap",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Episode IV",
+                  },
+                  "ref": null,
+                  "rendered": "Episode IV",
+                  "type": "h4",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "A New Hope",
+                  },
+                  "ref": null,
+                  "rendered": "A New Hope",
+                  "type": "h2",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "It is a period of civil war...",
+              },
+              "ref": null,
+              "rendered": "It is a period of civil war...",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "section",
     },
   ],
@@ -259,99 +323,14 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="crawl-wrap"
->
+      "children": Array [
         <div
-                className="title-wrap"
-        >
-                <h4 />
-                <h2 />
-        </div>
-        <p />
-</div>,
-      "className": "welcome-crawl",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="title-wrap"
->
-            <h4 />
-            <h2 />
-</div>,
-          <p />,
-        ],
-        "className": "crawl-wrap",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <h4 />,
-              <h2 />,
-            ],
-            "className": "title-wrap",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": undefined,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "h4",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": undefined,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "h2",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "p",
-        },
-      ],
-      "type": "div",
-    },
-    "type": "section",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
+          className="stars"
+/>,
+        <div
+          className="stars-animate"
+/>,
+        <div
           className="crawl-wrap"
 >
           <div
@@ -362,10 +341,34 @@ ShallowWrapper {
           </div>
           <p />
 </div>,
-        "className": "welcome-crawl",
+      ],
+      "className": "welcome-crawl",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "stars",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "stars-animate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -435,6 +438,131 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="stars"
+/>,
+          <div
+            className="stars-animate"
+/>,
+          <div
+            className="crawl-wrap"
+>
+            <div
+                        className="title-wrap"
+            >
+                        <h4 />
+                        <h2 />
+            </div>
+            <p />
+</div>,
+        ],
+        "className": "welcome-crawl",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "stars",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "stars-animate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="title-wrap"
+>
+                <h4 />
+                <h2 />
+</div>,
+              <p />,
+            ],
+            "className": "crawl-wrap",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h4 />,
+                  <h2 />,
+                ],
+                "className": "title-wrap",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "h4",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "h2",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "section",
     },
   ],
@@ -469,115 +597,14 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="crawl-wrap"
->
+      "children": Array [
         <div
-                className="title-wrap"
-        >
-                <h4>
-                        Episode V
-                </h4>
-                <h2>
-                        The Empire Strikes Back
-                </h2>
-        </div>
-        <p>
-                After the ...
-        </p>
-</div>,
-      "className": "welcome-crawl",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div
-            className="title-wrap"
->
-            <h4>
-                        Episode V
-            </h4>
-            <h2>
-                        The Empire Strikes Back
-            </h2>
-</div>,
-          <p>
-            After the ...
-</p>,
-        ],
-        "className": "crawl-wrap",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <h4>
-                Episode V
-</h4>,
-              <h2>
-                The Empire Strikes Back
-</h2>,
-            ],
-            "className": "title-wrap",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Episode V",
-              },
-              "ref": null,
-              "rendered": "Episode V",
-              "type": "h4",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "The Empire Strikes Back",
-              },
-              "ref": null,
-              "rendered": "The Empire Strikes Back",
-              "type": "h2",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "After the ...",
-          },
-          "ref": null,
-          "rendered": "After the ...",
-          "type": "p",
-        },
-      ],
-      "type": "div",
-    },
-    "type": "section",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
+          className="stars"
+/>,
+        <div
+          className="stars-animate"
+/>,
+        <div
           className="crawl-wrap"
 >
           <div
@@ -594,10 +621,34 @@ ShallowWrapper {
                     After the ...
           </p>
 </div>,
-        "className": "welcome-crawl",
+      ],
+      "className": "welcome-crawl",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "stars",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "stars-animate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -677,6 +728,147 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="stars"
+/>,
+          <div
+            className="stars-animate"
+/>,
+          <div
+            className="crawl-wrap"
+>
+            <div
+                        className="title-wrap"
+            >
+                        <h4>
+                                    Episode V
+                        </h4>
+                        <h2>
+                                    The Empire Strikes Back
+                        </h2>
+            </div>
+            <p>
+                        After the ...
+            </p>
+</div>,
+        ],
+        "className": "welcome-crawl",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "stars",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "stars-animate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="title-wrap"
+>
+                <h4>
+                                Episode V
+                </h4>
+                <h2>
+                                The Empire Strikes Back
+                </h2>
+</div>,
+              <p>
+                After the ...
+</p>,
+            ],
+            "className": "crawl-wrap",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h4>
+                    Episode V
+</h4>,
+                  <h2>
+                    The Empire Strikes Back
+</h2>,
+                ],
+                "className": "title-wrap",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Episode V",
+                  },
+                  "ref": null,
+                  "rendered": "Episode V",
+                  "type": "h4",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "The Empire Strikes Back",
+                  },
+                  "ref": null,
+                  "rendered": "The Empire Strikes Back",
+                  "type": "h2",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "After the ...",
+              },
+              "ref": null,
+              "rendered": "After the ...",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "section",
     },
   ],
