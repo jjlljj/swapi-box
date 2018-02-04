@@ -1,7 +1,21 @@
 .site-header {
-
+  padding: 10px 0 0;
+  text-align: center;
 }
 
-.site-header a {
-  text-decoration: none;
+.banner-text {
+  margin-top: 20px;
+  width: 600px;
+}
+
+.favorites-nav-btn {
+  background: black;
+  margin: 20px;
+}
+
+.favorites-nav-btn a {
+  display: block;
+  padding: 6px;
+  width: 100px;
+  height:100%;
 }

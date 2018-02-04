@@ -1,23 +1,23 @@
-.site-header {
+.nav-menu {
   text-align: center;
-}
-
-.site-header h1 {
-  font-size: 48px;
+  margin: 20px 0 10px;
 }
 
 .nav-menu div {
   display: inline-block;
-  background: blue;
+  background: transparent;
 }
 
 .nav-menu a {
   display: block;
+  font-size: 16px;
+  font-weight: 400;
+  height:100%;
   padding: 6px;
   width: 100px;
-  height:100%;
 }
 
 .active {
   background: #feda4a;
+  color: black;
 }

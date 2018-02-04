@@ -2,13 +2,16 @@ import React from 'react';
 import './Header.css';
 import Nav from '../Nav/Nav';
 import { Link } from 'react-router-dom';
+const starWarsLogo = require('./assets/star-wars-logo-red.png');
 
 const Header = () => {
   return (
     <header className="site-header">
-      <h1><Link to='/'>STAR WARS</Link></h1>
+      <Link to='/'>
+        <img src={starWarsLogo} className="banner-text" alt={'Star wars'}/>
+      </Link>
       <Nav />
-    </header>
+    </header>    
   );
 };
 

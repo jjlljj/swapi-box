@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <nav className="nav-menu">   
+    <nav className="nav-menu">
       <div>
         <NavLink 
           to="/people"

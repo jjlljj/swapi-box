@@ -67,7 +67,7 @@ ShallowWrapper {
           }
 />,
       ],
-      "className": "card-container",
+      "className": "card-container favorites-container",
     },
     "ref": null,
     "rendered": Array [
@@ -146,7 +146,7 @@ ShallowWrapper {
             }
 />,
         ],
-        "className": "card-container",
+        "className": "card-container favorites-container",
       },
       "ref": null,
       "rendered": Array [
@@ -250,7 +250,7 @@ ShallowWrapper {
           }
 />,
       ],
-      "className": "card-container",
+      "className": "card-container favorites-container",
     },
     "ref": null,
     "rendered": Array [
@@ -299,7 +299,7 @@ ShallowWrapper {
             }
 />,
         ],
-        "className": "card-container",
+        "className": "card-container favorites-container",
       },
       "ref": null,
       "rendered": Array [

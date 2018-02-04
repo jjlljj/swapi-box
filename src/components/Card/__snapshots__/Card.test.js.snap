@@ -29,15 +29,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3>
-          Beru Whitesun lars
-</h3>,
-        <button
-          className=""
-          onClick={[Function]}
->
-          ☆
-</button>,
+        <header>
+          <h3>
+                    Beru Whitesun lars
+          </h3>
+          <button
+                    className=""
+                    onClick={[Function]}
+                    title="Add to Favorites"
+          >
+                    ★
+          </button>
+</header>,
         <ul>
           <li>
                     Homeword
@@ -65,24 +68,48 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Beru Whitesun lars",
+          "children": Array [
+            <h3>
+              Beru Whitesun lars
+</h3>,
+            <button
+              className=""
+              onClick={[Function]}
+              title="Add to Favorites"
+>
+              ★
+</button>,
+          ],
         },
         "ref": null,
-        "rendered": "Beru Whitesun lars",
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "☆",
-          "className": "",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "☆",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Beru Whitesun lars",
+            },
+            "ref": null,
+            "rendered": "Beru Whitesun lars",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "★",
+              "className": "",
+              "onClick": [Function],
+              "title": "Add to Favorites",
+            },
+            "ref": null,
+            "rendered": "★",
+            "type": "button",
+          },
+        ],
+        "type": "header",
       },
       Object {
         "instance": null,
@@ -179,15 +206,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
-            Beru Whitesun lars
-</h3>,
-          <button
-            className=""
-            onClick={[Function]}
->
-            ☆
-</button>,
+          <header>
+            <h3>
+                        Beru Whitesun lars
+            </h3>
+            <button
+                        className=""
+                        onClick={[Function]}
+                        title="Add to Favorites"
+            >
+                        ★
+            </button>
+</header>,
           <ul>
             <li>
                         Homeword
@@ -215,24 +245,48 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Beru Whitesun lars",
+            "children": Array [
+              <h3>
+                Beru Whitesun lars
+</h3>,
+              <button
+                className=""
+                onClick={[Function]}
+                title="Add to Favorites"
+>
+                ★
+</button>,
+            ],
           },
           "ref": null,
-          "rendered": "Beru Whitesun lars",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "☆",
-            "className": "",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "☆",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Beru Whitesun lars",
+              },
+              "ref": null,
+              "rendered": "Beru Whitesun lars",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "★",
+                "className": "",
+                "onClick": [Function],
+                "title": "Add to Favorites",
+              },
+              "ref": null,
+              "rendered": "★",
+              "type": "button",
+            },
+          ],
+          "type": "header",
         },
         Object {
           "instance": null,
@@ -364,15 +418,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3>
-          Dagobah
-</h3>,
-        <button
-          className=""
-          onClick={[Function]}
->
-          ☆
-</button>,
+        <header>
+          <h3>
+                    Dagobah
+          </h3>
+          <button
+                    className=""
+                    onClick={[Function]}
+                    title="Add to Favorites"
+          >
+                    ★
+          </button>
+</header>,
         <ul>
           <li>
                     Climate
@@ -405,24 +462,48 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Dagobah",
+          "children": Array [
+            <h3>
+              Dagobah
+</h3>,
+            <button
+              className=""
+              onClick={[Function]}
+              title="Add to Favorites"
+>
+              ★
+</button>,
+          ],
         },
         "ref": null,
-        "rendered": "Dagobah",
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "☆",
-          "className": "",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "☆",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Dagobah",
+            },
+            "ref": null,
+            "rendered": "Dagobah",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "★",
+              "className": "",
+              "onClick": [Function],
+              "title": "Add to Favorites",
+            },
+            "ref": null,
+            "rendered": "★",
+            "type": "button",
+          },
+        ],
+        "type": "header",
       },
       Object {
         "instance": null,
@@ -543,15 +624,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
-            Dagobah
-</h3>,
-          <button
-            className=""
-            onClick={[Function]}
->
-            ☆
-</button>,
+          <header>
+            <h3>
+                        Dagobah
+            </h3>
+            <button
+                        className=""
+                        onClick={[Function]}
+                        title="Add to Favorites"
+            >
+                        ★
+            </button>
+</header>,
           <ul>
             <li>
                         Climate
@@ -584,24 +668,48 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Dagobah",
+            "children": Array [
+              <h3>
+                Dagobah
+</h3>,
+              <button
+                className=""
+                onClick={[Function]}
+                title="Add to Favorites"
+>
+                ★
+</button>,
+            ],
           },
           "ref": null,
-          "rendered": "Dagobah",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "☆",
-            "className": "",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "☆",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Dagobah",
+              },
+              "ref": null,
+              "rendered": "Dagobah",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "★",
+                "className": "",
+                "onClick": [Function],
+                "title": "Add to Favorites",
+              },
+              "ref": null,
+              "rendered": "★",
+              "type": "button",
+            },
+          ],
+          "type": "header",
         },
         Object {
           "instance": null,
@@ -755,15 +863,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3>
-          Beru Whitesun lars
-</h3>,
-        <button
-          className=""
-          onClick={[Function]}
->
-          ☆
-</button>,
+        <header>
+          <h3>
+                    Beru Whitesun lars
+          </h3>
+          <button
+                    className=""
+                    onClick={[Function]}
+                    title="Add to Favorites"
+          >
+                    ★
+          </button>
+</header>,
         <ul>
           <li>
                     Homeword
@@ -791,24 +902,48 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Beru Whitesun lars",
+          "children": Array [
+            <h3>
+              Beru Whitesun lars
+</h3>,
+            <button
+              className=""
+              onClick={[Function]}
+              title="Add to Favorites"
+>
+              ★
+</button>,
+          ],
         },
         "ref": null,
-        "rendered": "Beru Whitesun lars",
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "☆",
-          "className": "",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "☆",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Beru Whitesun lars",
+            },
+            "ref": null,
+            "rendered": "Beru Whitesun lars",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "★",
+              "className": "",
+              "onClick": [Function],
+              "title": "Add to Favorites",
+            },
+            "ref": null,
+            "rendered": "★",
+            "type": "button",
+          },
+        ],
+        "type": "header",
       },
       Object {
         "instance": null,
@@ -905,15 +1040,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
-            Beru Whitesun lars
-</h3>,
-          <button
-            className=""
-            onClick={[Function]}
->
-            ☆
-</button>,
+          <header>
+            <h3>
+                        Beru Whitesun lars
+            </h3>
+            <button
+                        className=""
+                        onClick={[Function]}
+                        title="Add to Favorites"
+            >
+                        ★
+            </button>
+</header>,
           <ul>
             <li>
                         Homeword
@@ -941,24 +1079,48 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Beru Whitesun lars",
+            "children": Array [
+              <h3>
+                Beru Whitesun lars
+</h3>,
+              <button
+                className=""
+                onClick={[Function]}
+                title="Add to Favorites"
+>
+                ★
+</button>,
+            ],
           },
           "ref": null,
-          "rendered": "Beru Whitesun lars",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "☆",
-            "className": "",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "☆",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Beru Whitesun lars",
+              },
+              "ref": null,
+              "rendered": "Beru Whitesun lars",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "★",
+                "className": "",
+                "onClick": [Function],
+                "title": "Add to Favorites",
+              },
+              "ref": null,
+              "rendered": "★",
+              "type": "button",
+            },
+          ],
+          "type": "header",
         },
         Object {
           "instance": null,
@@ -1089,15 +1251,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3>
-          Beru Whitesun lars
-</h3>,
-        <button
-          className="favorite"
-          onClick={[Function]}
->
-          ☆
-</button>,
+        <header>
+          <h3>
+                    Beru Whitesun lars
+          </h3>
+          <button
+                    className="favorite"
+                    onClick={[Function]}
+                    title="Add to Favorites"
+          >
+                    ★
+          </button>
+</header>,
         <ul>
           <li>
                     Homeword
@@ -1125,24 +1290,48 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Beru Whitesun lars",
+          "children": Array [
+            <h3>
+              Beru Whitesun lars
+</h3>,
+            <button
+              className="favorite"
+              onClick={[Function]}
+              title="Add to Favorites"
+>
+              ★
+</button>,
+          ],
         },
         "ref": null,
-        "rendered": "Beru Whitesun lars",
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "☆",
-          "className": "favorite",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "☆",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Beru Whitesun lars",
+            },
+            "ref": null,
+            "rendered": "Beru Whitesun lars",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "★",
+              "className": "favorite",
+              "onClick": [Function],
+              "title": "Add to Favorites",
+            },
+            "ref": null,
+            "rendered": "★",
+            "type": "button",
+          },
+        ],
+        "type": "header",
       },
       Object {
         "instance": null,
@@ -1239,15 +1428,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
-            Beru Whitesun lars
-</h3>,
-          <button
-            className="favorite"
-            onClick={[Function]}
->
-            ☆
-</button>,
+          <header>
+            <h3>
+                        Beru Whitesun lars
+            </h3>
+            <button
+                        className="favorite"
+                        onClick={[Function]}
+                        title="Add to Favorites"
+            >
+                        ★
+            </button>
+</header>,
           <ul>
             <li>
                         Homeword
@@ -1275,24 +1467,48 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Beru Whitesun lars",
+            "children": Array [
+              <h3>
+                Beru Whitesun lars
+</h3>,
+              <button
+                className="favorite"
+                onClick={[Function]}
+                title="Add to Favorites"
+>
+                ★
+</button>,
+            ],
           },
           "ref": null,
-          "rendered": "Beru Whitesun lars",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "☆",
-            "className": "favorite",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "☆",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Beru Whitesun lars",
+              },
+              "ref": null,
+              "rendered": "Beru Whitesun lars",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "★",
+                "className": "favorite",
+                "onClick": [Function],
+                "title": "Add to Favorites",
+              },
+              "ref": null,
+              "rendered": "★",
+              "type": "button",
+            },
+          ],
+          "type": "header",
         },
         Object {
           "instance": null,
