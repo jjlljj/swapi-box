@@ -21,3 +21,16 @@
   background: #feda4a;
   color: black;
 }
+
+@media screen and (max-width: 450px) {
+  
+
+  .nav-menu div {
+    display: block;
+  }
+
+  .nav-menu a {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
