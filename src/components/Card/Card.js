@@ -11,9 +11,11 @@ const Card = ({ card, addToFav }) => {
   const classList = favorite ? 'favorite' : '';
 
   const favButton = (
-    <button className={classList}
+    <button 
+      title={"Add to Favorites"}
+      className={classList}
       onClick={() => { addToFav(card); }}>
-      &#9734;
+      &#9733;
     </button>
   );
 
@@ -25,8 +27,10 @@ const Card = ({ card, addToFav }) => {
 
   return (
     <div className="card"> 
-      <h3>{name}</h3>
-      { renderButton }
+      <header>
+        <h3>{name}</h3>
+        { renderButton }
+      </header>
       <ul>
         { renderedContent }
       </ul>

@@ -4,10 +4,15 @@
 }
 
 .card-container {
-  background-color: #1A1A1A;
+  background-color: #000;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 a:visited {

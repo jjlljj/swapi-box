@@ -1,19 +1,16 @@
 .site-header {
-  padding: 10px;
+  padding: 10px 0 0;
   text-align: center;
-  width: 100%;
 }
 
-.site-header h1 {
+.banner-text {
   font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 48px;
-
+  font-size: 62px;
   letter-spacing: 4px;
 }
 
-a {
-  text-decoration: none;
-  color: white;
+.banner-text a {
+  
 }
 
 .favorites-nav-btn {

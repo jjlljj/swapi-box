@@ -1,11 +1,11 @@
 .nav-menu {
   text-align: center;
-  margin: 10px;
+  margin: 20px 0 10px;
 }
 
 .nav-menu div {
   display: inline-block;
-  background: #0C1C23;
+  background: transparent;
 }
 
 .nav-menu a {
@@ -17,4 +17,5 @@
 
 .active {
   background: #feda4a;
+  color: black;
 }

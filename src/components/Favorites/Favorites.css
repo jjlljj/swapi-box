@@ -1,8 +1,8 @@
-.favorites {
+.favorites-container {
   min-height: 80vh
 }
 
-.favorites h3 {
+.favorites-container h3 {
   align-self: center;
   font-size: 40px;
   color: #f2f2f2;
