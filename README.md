@@ -12,11 +12,11 @@ In this project for Turing's Front End Engineering program, I was asked to creat
 
 ### Landing view with Star Wars opening crawl: 
 
-![Homepage]('./public/swapi-box-homepage.png')
+![Homepage](./public/swapi-box-homepage.png)
 
 ### Cards view displaying character cards: 
 
-![People]('./public/swapi-box-card-display.png')
+![People](./public/swapi-box-card-display.png)
 
 
 ## Set Up
