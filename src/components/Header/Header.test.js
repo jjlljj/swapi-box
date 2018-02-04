@@ -7,9 +7,10 @@ import Header from './Header';
 
 describe('Header', () => {
 
-  it('should not pass', () => {
-
-    expect(false).toEqual(true)
+  it('should match snapshot', () => {
+    const renderedComponent = shallow(<Header />)
+    
+    expect(renderedComponent).toMatchSnapshot()
   })
 
 })

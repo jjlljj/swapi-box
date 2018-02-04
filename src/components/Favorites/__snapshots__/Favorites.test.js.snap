@@ -1,0 +1,338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites should match snapshot when passed cards 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    addToFav={[Function]}
+    cards={
+        Array [
+            Object {
+              "Climate": "murky",
+              "Population": "unknown",
+              "Residents": "",
+              "Terrain": "swamp, jungles",
+              "cardType": "planets",
+              "favorite": true,
+              "name": "Dagobah",
+            },
+            Object {
+              "Homeword": "Tatooine",
+              "Population": "200000",
+              "Species": "Human",
+              "cardType": "people",
+              "name": "Beru Whitesun lars",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          addToFav={[Function]}
+          card={
+                    Object {
+                              "Climate": "murky",
+                              "Population": "unknown",
+                              "Residents": "",
+                              "Terrain": "swamp, jungles",
+                              "cardType": "planets",
+                              "favorite": true,
+                              "name": "Dagobah",
+                            }
+          }
+/>,
+        <Card
+          addToFav={[Function]}
+          card={
+                    Object {
+                              "Homeword": "Tatooine",
+                              "Population": "200000",
+                              "Species": "Human",
+                              "cardType": "people",
+                              "name": "Beru Whitesun lars",
+                            }
+          }
+/>,
+      ],
+      "className": "card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Dagobah",
+        "nodeType": "function",
+        "props": Object {
+          "addToFav": [Function],
+          "card": Object {
+            "Climate": "murky",
+            "Population": "unknown",
+            "Residents": "",
+            "Terrain": "swamp, jungles",
+            "cardType": "planets",
+            "favorite": true,
+            "name": "Dagobah",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Beru Whitesun lars",
+        "nodeType": "function",
+        "props": Object {
+          "addToFav": [Function],
+          "card": Object {
+            "Homeword": "Tatooine",
+            "Population": "200000",
+            "Species": "Human",
+            "cardType": "people",
+            "name": "Beru Whitesun lars",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            addToFav={[Function]}
+            card={
+                        Object {
+                                    "Climate": "murky",
+                                    "Population": "unknown",
+                                    "Residents": "",
+                                    "Terrain": "swamp, jungles",
+                                    "cardType": "planets",
+                                    "favorite": true,
+                                    "name": "Dagobah",
+                                  }
+            }
+/>,
+          <Card
+            addToFav={[Function]}
+            card={
+                        Object {
+                                    "Homeword": "Tatooine",
+                                    "Population": "200000",
+                                    "Species": "Human",
+                                    "cardType": "people",
+                                    "name": "Beru Whitesun lars",
+                                  }
+            }
+/>,
+        ],
+        "className": "card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Dagobah",
+          "nodeType": "function",
+          "props": Object {
+            "addToFav": [Function],
+            "card": Object {
+              "Climate": "murky",
+              "Population": "unknown",
+              "Residents": "",
+              "Terrain": "swamp, jungles",
+              "cardType": "planets",
+              "favorite": true,
+              "name": "Dagobah",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Beru Whitesun lars",
+          "nodeType": "function",
+          "props": Object {
+            "addToFav": [Function],
+            "card": Object {
+              "Homeword": "Tatooine",
+              "Population": "200000",
+              "Species": "Human",
+              "cardType": "people",
+              "name": "Beru Whitesun lars",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Favorites should match snapshot when passed only one card 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    addToFav={[Function]}
+    cards={
+        Array [
+            Object {
+              "Climate": "temperate, tropical",
+              "Population": "1000",
+              "Residents": "",
+              "Terrain": "jungle, rainforests",
+              "cardType": "planets",
+              "favorite": true,
+              "name": "Yavin IV",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          addToFav={[Function]}
+          card={
+                    Object {
+                              "Climate": "temperate, tropical",
+                              "Population": "1000",
+                              "Residents": "",
+                              "Terrain": "jungle, rainforests",
+                              "cardType": "planets",
+                              "favorite": true,
+                              "name": "Yavin IV",
+                            }
+          }
+/>,
+      ],
+      "className": "card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Yavin IV",
+        "nodeType": "function",
+        "props": Object {
+          "addToFav": [Function],
+          "card": Object {
+            "Climate": "temperate, tropical",
+            "Population": "1000",
+            "Residents": "",
+            "Terrain": "jungle, rainforests",
+            "cardType": "planets",
+            "favorite": true,
+            "name": "Yavin IV",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            addToFav={[Function]}
+            card={
+                        Object {
+                                    "Climate": "temperate, tropical",
+                                    "Population": "1000",
+                                    "Residents": "",
+                                    "Terrain": "jungle, rainforests",
+                                    "cardType": "planets",
+                                    "favorite": true,
+                                    "name": "Yavin IV",
+                                  }
+            }
+/>,
+        ],
+        "className": "card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Yavin IV",
+          "nodeType": "function",
+          "props": Object {
+            "addToFav": [Function],
+            "card": Object {
+              "Climate": "temperate, tropical",
+              "Population": "1000",
+              "Residents": "",
+              "Terrain": "jungle, rainforests",
+              "cardType": "planets",
+              "favorite": true,
+              "name": "Yavin IV",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

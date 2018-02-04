@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vehicles should match snapshot when passed mock cards 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Vehicles
+    cards={
+        Array [
+            Object {
+              "Model": "Digger Crawler",
+              "Passengers": "30",
+              "Vehicle Class": "wheeled",
+              "cardType": "vehicles",
+              "name": "Sand Crawler",
+            },
+            Object {
+              "Model": "T-16 skyhopper",
+              "Passengers": "1",
+              "Vehicle Class": "repulsorcraft",
+              "cardType": "vehicles",
+              "name": "T-16 skyhopper",
+            },
+          ]
+    }
+    fetchData={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          card={
+                    Object {
+                              "Model": "Digger Crawler",
+                              "Passengers": "30",
+                              "Vehicle Class": "wheeled",
+                              "cardType": "vehicles",
+                              "name": "Sand Crawler",
+                            }
+          }
+/>,
+        <Card
+          card={
+                    Object {
+                              "Model": "T-16 skyhopper",
+                              "Passengers": "1",
+                              "Vehicle Class": "repulsorcraft",
+                              "cardType": "vehicles",
+                              "name": "T-16 skyhopper",
+                            }
+          }
+/>,
+      ],
+      "className": "card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Sand Crawler",
+        "nodeType": "function",
+        "props": Object {
+          "card": Object {
+            "Model": "Digger Crawler",
+            "Passengers": "30",
+            "Vehicle Class": "wheeled",
+            "cardType": "vehicles",
+            "name": "Sand Crawler",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "T-16 skyhopper",
+        "nodeType": "function",
+        "props": Object {
+          "card": Object {
+            "Model": "T-16 skyhopper",
+            "Passengers": "1",
+            "Vehicle Class": "repulsorcraft",
+            "cardType": "vehicles",
+            "name": "T-16 skyhopper",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            card={
+                        Object {
+                                    "Model": "Digger Crawler",
+                                    "Passengers": "30",
+                                    "Vehicle Class": "wheeled",
+                                    "cardType": "vehicles",
+                                    "name": "Sand Crawler",
+                                  }
+            }
+/>,
+          <Card
+            card={
+                        Object {
+                                    "Model": "T-16 skyhopper",
+                                    "Passengers": "1",
+                                    "Vehicle Class": "repulsorcraft",
+                                    "cardType": "vehicles",
+                                    "name": "T-16 skyhopper",
+                                  }
+            }
+/>,
+        ],
+        "className": "card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Sand Crawler",
+          "nodeType": "function",
+          "props": Object {
+            "card": Object {
+              "Model": "Digger Crawler",
+              "Passengers": "30",
+              "Vehicle Class": "wheeled",
+              "cardType": "vehicles",
+              "name": "Sand Crawler",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "T-16 skyhopper",
+          "nodeType": "function",
+          "props": Object {
+            "card": Object {
+              "Model": "T-16 skyhopper",
+              "Passengers": "1",
+              "Vehicle Class": "repulsorcraft",
+              "cardType": "vehicles",
+              "name": "T-16 skyhopper",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Vehicles should match snapshot when passed only one card 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Vehicles
+    cards={
+        Array [
+            Object {
+              "Model": "T-16 skyhopper",
+              "Passengers": "1",
+              "Vehicle Class": "repulsorcraft",
+              "cardType": "vehicles",
+              "name": "T-16 skyhopper",
+            },
+          ]
+    }
+    fetchData={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          card={
+                    Object {
+                              "Model": "T-16 skyhopper",
+                              "Passengers": "1",
+                              "Vehicle Class": "repulsorcraft",
+                              "cardType": "vehicles",
+                              "name": "T-16 skyhopper",
+                            }
+          }
+/>,
+      ],
+      "className": "card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "T-16 skyhopper",
+        "nodeType": "function",
+        "props": Object {
+          "card": Object {
+            "Model": "T-16 skyhopper",
+            "Passengers": "1",
+            "Vehicle Class": "repulsorcraft",
+            "cardType": "vehicles",
+            "name": "T-16 skyhopper",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            card={
+                        Object {
+                                    "Model": "T-16 skyhopper",
+                                    "Passengers": "1",
+                                    "Vehicle Class": "repulsorcraft",
+                                    "cardType": "vehicles",
+                                    "name": "T-16 skyhopper",
+                                  }
+            }
+/>,
+        ],
+        "className": "card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "T-16 skyhopper",
+          "nodeType": "function",
+          "props": Object {
+            "card": Object {
+              "Model": "T-16 skyhopper",
+              "Passengers": "1",
+              "Vehicle Class": "repulsorcraft",
+              "cardType": "vehicles",
+              "name": "T-16 skyhopper",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

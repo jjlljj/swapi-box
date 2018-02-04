@@ -1,0 +1,1394 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match snapshot when rendering a person card 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    addToFav={[Function]}
+    card={
+        Object {
+            "Homeword": "Tatooine",
+            "Population": "200000",
+            "Species": "Human",
+            "cardType": "people",
+            "name": "Beru Whitesun lars",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Beru Whitesun lars
+</h3>,
+        <button
+          className=""
+          onClick={[Function]}
+>
+          ☆
+</button>,
+        <ul>
+          <li>
+                    Homeword
+                    : 
+                    Tatooine
+          </li>
+          <li>
+                    Population
+                    : 
+                    200000
+          </li>
+          <li>
+                    Species
+                    : 
+                    Human
+          </li>
+</ul>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Beru Whitesun lars",
+        },
+        "ref": null,
+        "rendered": "Beru Whitesun lars",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "☆",
+          "className": "",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "☆",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              Homeword
+              : 
+              Tatooine
+</li>,
+            <li>
+              Population
+              : 
+              200000
+</li>,
+            <li>
+              Species
+              : 
+              Human
+</li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "Homeword",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Homeword",
+                ": ",
+                "Tatooine",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Homeword",
+              ": ",
+              "Tatooine",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Population",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Population",
+                ": ",
+                "200000",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Population",
+              ": ",
+              "200000",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Species",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Species",
+                ": ",
+                "Human",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Species",
+              ": ",
+              "Human",
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Beru Whitesun lars
+</h3>,
+          <button
+            className=""
+            onClick={[Function]}
+>
+            ☆
+</button>,
+          <ul>
+            <li>
+                        Homeword
+                        : 
+                        Tatooine
+            </li>
+            <li>
+                        Population
+                        : 
+                        200000
+            </li>
+            <li>
+                        Species
+                        : 
+                        Human
+            </li>
+</ul>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Beru Whitesun lars",
+          },
+          "ref": null,
+          "rendered": "Beru Whitesun lars",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "☆",
+            "className": "",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "☆",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                Homeword
+                : 
+                Tatooine
+</li>,
+              <li>
+                Population
+                : 
+                200000
+</li>,
+              <li>
+                Species
+                : 
+                Human
+</li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "Homeword",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Homeword",
+                  ": ",
+                  "Tatooine",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Homeword",
+                ": ",
+                "Tatooine",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Population",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Population",
+                  ": ",
+                  "200000",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Population",
+                ": ",
+                "200000",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Species",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Species",
+                  ": ",
+                  "Human",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Species",
+                ": ",
+                "Human",
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Card should match snapshot when rendering a planet card 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    addToFav={[Function]}
+    card={
+        Object {
+            "Climate": "murky",
+            "Population": "unknown",
+            "Residents": "",
+            "Terrain": "swamp, jungles",
+            "cardType": "planets",
+            "favorite": false,
+            "name": "Dagobah",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Dagobah
+</h3>,
+        <button
+          className=""
+          onClick={[Function]}
+>
+          ☆
+</button>,
+        <ul>
+          <li>
+                    Climate
+                    : 
+                    murky
+          </li>
+          <li>
+                    Population
+                    : 
+                    unknown
+          </li>
+          <li>
+                    Residents
+                    : 
+                    
+          </li>
+          <li>
+                    Terrain
+                    : 
+                    swamp, jungles
+          </li>
+</ul>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Dagobah",
+        },
+        "ref": null,
+        "rendered": "Dagobah",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "☆",
+          "className": "",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "☆",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              Climate
+              : 
+              murky
+</li>,
+            <li>
+              Population
+              : 
+              unknown
+</li>,
+            <li>
+              Residents
+              : 
+              
+</li>,
+            <li>
+              Terrain
+              : 
+              swamp, jungles
+</li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "Climate",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Climate",
+                ": ",
+                "murky",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Climate",
+              ": ",
+              "murky",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Population",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Population",
+                ": ",
+                "unknown",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Population",
+              ": ",
+              "unknown",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Residents",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Residents",
+                ": ",
+                "",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Residents",
+              ": ",
+              "",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Terrain",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Terrain",
+                ": ",
+                "swamp, jungles",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Terrain",
+              ": ",
+              "swamp, jungles",
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Dagobah
+</h3>,
+          <button
+            className=""
+            onClick={[Function]}
+>
+            ☆
+</button>,
+          <ul>
+            <li>
+                        Climate
+                        : 
+                        murky
+            </li>
+            <li>
+                        Population
+                        : 
+                        unknown
+            </li>
+            <li>
+                        Residents
+                        : 
+                        
+            </li>
+            <li>
+                        Terrain
+                        : 
+                        swamp, jungles
+            </li>
+</ul>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Dagobah",
+          },
+          "ref": null,
+          "rendered": "Dagobah",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "☆",
+            "className": "",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "☆",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                Climate
+                : 
+                murky
+</li>,
+              <li>
+                Population
+                : 
+                unknown
+</li>,
+              <li>
+                Residents
+                : 
+                
+</li>,
+              <li>
+                Terrain
+                : 
+                swamp, jungles
+</li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "Climate",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Climate",
+                  ": ",
+                  "murky",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Climate",
+                ": ",
+                "murky",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Population",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Population",
+                  ": ",
+                  "unknown",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Population",
+                ": ",
+                "unknown",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Residents",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Residents",
+                  ": ",
+                  "",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Residents",
+                ": ",
+                "",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Terrain",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Terrain",
+                  ": ",
+                  "swamp, jungles",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Terrain",
+                ": ",
+                "swamp, jungles",
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Card should match snapshot when rendering a vehicle card 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    addToFav={[Function]}
+    card={
+        Object {
+            "Homeword": "Tatooine",
+            "Population": "200000",
+            "Species": "Human",
+            "cardType": "people",
+            "name": "Beru Whitesun lars",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Beru Whitesun lars
+</h3>,
+        <button
+          className=""
+          onClick={[Function]}
+>
+          ☆
+</button>,
+        <ul>
+          <li>
+                    Homeword
+                    : 
+                    Tatooine
+          </li>
+          <li>
+                    Population
+                    : 
+                    200000
+          </li>
+          <li>
+                    Species
+                    : 
+                    Human
+          </li>
+</ul>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Beru Whitesun lars",
+        },
+        "ref": null,
+        "rendered": "Beru Whitesun lars",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "☆",
+          "className": "",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "☆",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              Homeword
+              : 
+              Tatooine
+</li>,
+            <li>
+              Population
+              : 
+              200000
+</li>,
+            <li>
+              Species
+              : 
+              Human
+</li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "Homeword",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Homeword",
+                ": ",
+                "Tatooine",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Homeword",
+              ": ",
+              "Tatooine",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Population",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Population",
+                ": ",
+                "200000",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Population",
+              ": ",
+              "200000",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Species",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Species",
+                ": ",
+                "Human",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Species",
+              ": ",
+              "Human",
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Beru Whitesun lars
+</h3>,
+          <button
+            className=""
+            onClick={[Function]}
+>
+            ☆
+</button>,
+          <ul>
+            <li>
+                        Homeword
+                        : 
+                        Tatooine
+            </li>
+            <li>
+                        Population
+                        : 
+                        200000
+            </li>
+            <li>
+                        Species
+                        : 
+                        Human
+            </li>
+</ul>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Beru Whitesun lars",
+          },
+          "ref": null,
+          "rendered": "Beru Whitesun lars",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "☆",
+            "className": "",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "☆",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                Homeword
+                : 
+                Tatooine
+</li>,
+              <li>
+                Population
+                : 
+                200000
+</li>,
+              <li>
+                Species
+                : 
+                Human
+</li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "Homeword",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Homeword",
+                  ": ",
+                  "Tatooine",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Homeword",
+                ": ",
+                "Tatooine",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Population",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Population",
+                  ": ",
+                  "200000",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Population",
+                ": ",
+                "200000",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Species",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Species",
+                  ": ",
+                  "Human",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Species",
+                ": ",
+                "Human",
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Card should match snapshot when the card is favorited 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    addToFav={[Function]}
+    card={
+        Object {
+            "Homeword": "Tatooine",
+            "Population": "200000",
+            "Species": "Human",
+            "cardType": "people",
+            "favorite": true,
+            "name": "Beru Whitesun lars",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Beru Whitesun lars
+</h3>,
+        <button
+          className="favorite"
+          onClick={[Function]}
+>
+          ☆
+</button>,
+        <ul>
+          <li>
+                    Homeword
+                    : 
+                    Tatooine
+          </li>
+          <li>
+                    Population
+                    : 
+                    200000
+          </li>
+          <li>
+                    Species
+                    : 
+                    Human
+          </li>
+</ul>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Beru Whitesun lars",
+        },
+        "ref": null,
+        "rendered": "Beru Whitesun lars",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "☆",
+          "className": "favorite",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "☆",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              Homeword
+              : 
+              Tatooine
+</li>,
+            <li>
+              Population
+              : 
+              200000
+</li>,
+            <li>
+              Species
+              : 
+              Human
+</li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "Homeword",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Homeword",
+                ": ",
+                "Tatooine",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Homeword",
+              ": ",
+              "Tatooine",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Population",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Population",
+                ": ",
+                "200000",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Population",
+              ": ",
+              "200000",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Species",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Species",
+                ": ",
+                "Human",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Species",
+              ": ",
+              "Human",
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Beru Whitesun lars
+</h3>,
+          <button
+            className="favorite"
+            onClick={[Function]}
+>
+            ☆
+</button>,
+          <ul>
+            <li>
+                        Homeword
+                        : 
+                        Tatooine
+            </li>
+            <li>
+                        Population
+                        : 
+                        200000
+            </li>
+            <li>
+                        Species
+                        : 
+                        Human
+            </li>
+</ul>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Beru Whitesun lars",
+          },
+          "ref": null,
+          "rendered": "Beru Whitesun lars",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "☆",
+            "className": "favorite",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "☆",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                Homeword
+                : 
+                Tatooine
+</li>,
+              <li>
+                Population
+                : 
+                200000
+</li>,
+              <li>
+                Species
+                : 
+                Human
+</li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "Homeword",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Homeword",
+                  ": ",
+                  "Tatooine",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Homeword",
+                ": ",
+                "Tatooine",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Population",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Population",
+                  ": ",
+                  "200000",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Population",
+                ": ",
+                "200000",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Species",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Species",
+                  ": ",
+                  "Human",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Species",
+                ": ",
+                "Human",
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
