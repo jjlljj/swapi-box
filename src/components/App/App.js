@@ -48,7 +48,13 @@ class App extends Component {
   }
 
   fetchPeople = async () => {
-    const people = await getPeople();
+    let people
+    try {
+      people = await getPeople();
+    } catch(err) {
+      console.log(err)
+    }
+
     this.setState({ people }, () => {
       this.dataToSto(this.state);
     });

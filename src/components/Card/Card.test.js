@@ -2,19 +2,20 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Card from './Card';
 
 describe('Card', () => {
 
   let mockAddFavorite
+  let renderedComponent
   const mockPlanetCard = {
     Climate: "murky",
     Population: "unknown",
     Residents: "",
     Terrain: "swamp, jungles",
     cardType: "planets",
-    favorite: true,
+    favorite: false,
     name: "Dagobah"
   }
   const mockPersonCard = {
@@ -34,14 +35,50 @@ describe('Card', () => {
 
   beforeEach(()=> {
     mockAddFavorite = jest.fn()
-    renderedComponent = shallow(<Favorites cards={mockCards} addToFav={mockAddFavorite} />)
   })
 
 
-  it('should not pass', () => {
-    // const renderedComponent = shallow(<Card/>);
+  it('should match snapshot when rendering a planet card', () => {
+    renderedComponent = shallow(<Card card={mockPlanetCard} addToFav={mockAddFavorite} />)
+    
+    expect(renderedComponent).toMatchSnapshot()
+  })
 
-    expect(true).toEqual(false)
+  it('should match snapshot when rendering a person card', () => {
+    renderedComponent = shallow(<Card card={mockPersonCard} addToFav={mockAddFavorite} />)
+    
+    expect(renderedComponent).toMatchSnapshot()
+  })
+
+  it('should match snapshot when rendering a vehicle card', () => {
+    renderedComponent = shallow(<Card card={mockPersonCard} addToFav={mockAddFavorite} />)
+    
+    expect(renderedComponent).toMatchSnapshot()
+  })
+
+  it('should match snapshot when the card is favorited', () => {
+    const favoritePersonCard = {
+      Homeword: "Tatooine",
+      Population: "200000",
+      Species: "Human",
+      cardType: "people",
+      favorite: true,
+      name: "Beru Whitesun lars"
+    }
+
+    renderedComponent = shallow(<Card card={favoritePersonCard} addToFav={mockAddFavorite} />)
+    
+    expect(renderedComponent).toMatchSnapshot()
+  })
+
+  it('should fire addToFav when it is favorited', () => {
+    renderedComponent = mount(<Card card={mockPersonCard} addToFav={mockAddFavorite} />)
+    
+    expect(mockAddFavorite).not.toHaveBeenCalled()
+
+    renderedComponent.props().addToFav()
+    
+    expect(mockAddFavorite).toHaveBeenCalled()
   })
 
 })

@@ -483,17 +483,19 @@ describe('getPlanets', () => {
 
     })
 
-    it.skip('should catch errors', async () => { 
+    it('should catch errors', async () => { 
 
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject({
         status: 500
       }))
+      const expected = Error('Could not fetch data')
 
-      const planetDataReturn = await getPlanetData(mockPlanetsArray)
+      try {
+        const planetDataReturn = await getPlanetData(mockPlanetsArray)  
+      } catch (err) {
+        expect(err).toEqual(expected)
+      }
       
-      const expected = Error('Failed to get planet data')
-
-      expect(PlanetDataReturn).rejects.toEqual('could not')
     })
   })
 
