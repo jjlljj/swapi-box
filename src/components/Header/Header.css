@@ -5,3 +5,15 @@
 .site-header a {
   text-decoration: none;
 }
+
+.favorites-nav-btn {
+  display: inline-block;
+  background: blue;
+}
+
+.favorites-nav-btn a {
+  display: block;
+  padding: 6px;
+  width: 100px;
+  height:100%;
+}
