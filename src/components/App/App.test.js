@@ -304,8 +304,90 @@ describe('App', () => {
 
   describe('manageFavorites', () => {
 
+    let renderedComponent
+    let mockCards
 
+    beforeEach(() => {
+      renderedComponent = shallow(<App />, {disableLifecycleMethods: true});
 
+      mockCards = [
+        {
+          name: 'Luke skywalker',
+          cardType: "people",
+          Population: 10000,
+          Species: 'human',
+          Homeworld: "Tatooine",
+        },
+        {
+          name: 'C-3PO',
+          cardType: "people",
+          Population: 3244,
+          Species: 'droid',
+          Homeworld: "somewhere",
+        }
+      ]
+
+      renderedComponent.setState({ people: mockCards })
+    })
+
+    it('should return undefined', () => {
+
+      const componentReturn = renderedComponent.instance().manageFavorites(mockCards[0])
+
+      expect(componentReturn).toEqual(undefined)
+    })
+
+    it('should not remove the card from the original array', () => {
+       expect(renderedComponent.state().favorites).toEqual([])
+      expect(renderedComponent.state().people.length).toEqual(2)
+
+      renderedComponent.instance().manageFavorites(mockCards[0])
+      expect(renderedComponent.state().people.length).toEqual(2)
+    })
+
+    it('should add the favorited card to state if not already favorited', () => {
+
+      expect(renderedComponent.state().favorites).toEqual([])
+
+      renderedComponent.instance().manageFavorites(mockCards[0])
+      expect(renderedComponent.state().favorites.length).toEqual(1)
+    })
+
+    it('should update the card as favorited in state in all instances', () => {
+
+      expect(renderedComponent.state().people[0].favorite).toEqual(undefined)
+      expect(renderedComponent.state().favorites).toEqual([])
+
+      renderedComponent.instance().manageFavorites(mockCards[0])
+
+      expect(renderedComponent.state().people[0].favorite).toEqual(true)
+      expect(renderedComponent.state().favorites[0].favorite).toEqual(true)
+    })
+
+    it('should remove a card that has already been favorited', () => {
+      renderedComponent.instance().manageFavorites(mockCards[0])
+
+      expect(renderedComponent.state().favorites.length).toEqual(1)
+
+      renderedComponent.instance().manageFavorites(mockCards[0])
+
+      expect(renderedComponent.state().favorites.length).toEqual(0)
+    })
+
+    it('should update the card as un-favorited in state in all instances', () => {
+      expect(renderedComponent.state().people[0].favorite).toEqual(undefined)
+      expect(renderedComponent.state().favorites).toEqual([])
+
+      renderedComponent.instance().manageFavorites(mockCards[0])
+
+      expect(renderedComponent.state().people[0].favorite).toEqual(true)
+      expect(renderedComponent.state().favorites[0].favorite).toEqual(true)
+
+      renderedComponent.instance().manageFavorites(renderedComponent.state().favorites[0])
+
+      expect(renderedComponent.state().people[0].favorite).toEqual(false)
+      expect(renderedComponent.state().favorites).toEqual([])
+    })
 
   })
 
