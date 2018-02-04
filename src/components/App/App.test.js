@@ -311,10 +311,3 @@ describe('App', () => {
 
   
 });
-
-
-// window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//           status: 200,
-//           json: () => Promise.resolve({ results: 'Returned results' })
-//     })
-//   )
