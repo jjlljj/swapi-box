@@ -4,13 +4,8 @@
 }
 
 .banner-text {
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 62px;
-  letter-spacing: 4px;
-}
-
-.banner-text a {
-  
+  margin-top: 20px;
+  width: 600px;
 }
 
 .favorites-nav-btn {

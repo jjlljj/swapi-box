@@ -2,6 +2,7 @@
   background-color: #1A1A1A;
   box-sizing: border-box;
   color: #d2d2d2;
+  max-height: 410px;
   min-height: 320px;
   margin: 20px;
   position: relative;
