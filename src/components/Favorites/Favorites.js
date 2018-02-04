@@ -14,7 +14,7 @@ const Favorites = ({ cards, addToFav }) => {
   const rendered = cards.length ? renderedCards : noFavorites;
 
   return (
-    <div className="card-container"> 
+    <div className="card-container favorites"> 
       {
         rendered
       }

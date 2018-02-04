@@ -26,6 +26,13 @@ const Nav = () => {
           Vehicles
         </NavLink>
       </div>
+      <div>
+        <NavLink 
+          to="/favorites"
+          activeClassName="active">
+          Favorites
+        </NavLink>
+      </div>
     </nav>
   );
 };

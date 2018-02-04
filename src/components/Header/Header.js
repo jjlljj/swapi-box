@@ -5,19 +5,10 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div>
-      <header className="site-header">
-        <h1><Link to='/'>STAR WARS</Link></h1>
-        <div className="favorites-nav-btn">
-          <NavLink 
-            to="/favorites"
-            activeClassName="active">
-            Favorites
-          </NavLink>
-        </div>
-      </header>    
+    <header className="site-header">
+      <h1><Link to='/'>SWAPI BOX</Link></h1>
       <Nav />
-    </div>
+    </header>    
   );
 };
 

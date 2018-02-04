@@ -1,9 +1,10 @@
 .App {
-  background-color: #1A1A1A;
+  background-color: #000;
   min-height: 100vh;
 }
 
 .card-container {
+  background-color: #1A1A1A;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -11,4 +12,8 @@
 
 a:visited {
   color: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Pathway Gothic One', sans-serif;
 }

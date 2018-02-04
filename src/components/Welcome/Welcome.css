@@ -9,6 +9,7 @@
   justify-content: center;
   letter-spacing: 8px;
   line-height: 140%;
+  min-height: 400px;
   overflow: hidden;
   perspective: 400px;
   position: relative;

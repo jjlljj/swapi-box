@@ -1,0 +1,10 @@
+.favorites {
+  min-height: 80vh
+}
+
+.favorites h3 {
+  align-self: center;
+  font-size: 40px;
+  color: #f2f2f2;
+  margin: 30px;
+}
