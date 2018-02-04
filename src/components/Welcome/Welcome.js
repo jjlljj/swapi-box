@@ -6,6 +6,8 @@ const Welcome = ({ episode, title, text}) => {
 
   return (
     <section className="welcome-crawl"> 
+      <div className="stars"></div>
+      <div className="stars-animate"></div>
       <div className="crawl-wrap">
         <div className="title-wrap">
           <h4>{episode}</h4>

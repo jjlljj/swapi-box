@@ -1,13 +1,13 @@
 .welcome-crawl {
-  /*font-family: 'Pathway Gothic One', sans-serif;*/
-  background: #000;
-  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  background-size: cover;
+  color: #fedb4d;
   display: flex;
-  font-size: 66px;
-  font-weight: 600;
+  font-size: 72px;
+  font-weight: bold;
   height: 80vh;
   justify-content: center;
-  letter-spacing: 6px;
+  letter-spacing: 8px;
   line-height: 140%;
   overflow: hidden;
   perspective: 400px;
@@ -27,15 +27,15 @@
 }
 
 .title-wrap h2 {
-  font-size: 70px;
+  font-size: 100px;
   font-weight: 800;
-  margin: 30px;
+  margin: 40px;
   text-transform: uppercase;
 }
 
 @keyframes crawl {
   0% {
-    top: 800px;
+    top: 600px;
     transform: rotateX(20deg) translateZ(0);
   }
 
@@ -43,4 +43,31 @@
     top: -5000px;
     transform: rotateX(25deg) translateZ(-2500px);
   }
+}
+
+
+@keyframes move-animate-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.stars, 
+.stars-animate {
+  height:100%;
+  left:0;
+  position:absolute;
+  top:0;
+  width:100%;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:-1;
+}
+
+.stars-animate{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:0;
+
+  animation:move-animate-back 300s linear infinite;
 }

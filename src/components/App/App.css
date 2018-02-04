@@ -8,3 +8,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+a:visited {
+  color: auto;
+}

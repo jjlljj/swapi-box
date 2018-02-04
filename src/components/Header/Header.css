@@ -1,14 +1,20 @@
 .site-header {
-
+  text-align: center;
 }
 
-.site-header a {
+.site-header h1 {
+  font-size: 48px;
+}
+
+a {
   text-decoration: none;
+  color: white;
 }
+
 
 .favorites-nav-btn {
-  display: inline-block;
   background: blue;
+  display: inline-block;
 }
 
 .favorites-nav-btn a {
