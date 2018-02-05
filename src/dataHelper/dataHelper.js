@@ -60,7 +60,7 @@ const getPeopleData = peopleArray => {
       let { Species } = await getSpeciesData(species)
       const cardType = 'people'
 
-      return { name, cardType, Homeword: world, Species, Population: population }
+      return { name, cardType, Species,  Homeword: world, Population: population }
     })
       
     return Promise.all(unresolved)
