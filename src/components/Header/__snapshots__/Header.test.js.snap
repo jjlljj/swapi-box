@@ -28,7 +28,9 @@ ShallowWrapper {
                     src="star-wars-logo-red.png"
           />
 </Link>,
-        <Nav />,
+        <Nav
+          favLength={undefined}
+/>,
       ],
       "className": "site-header",
     },
@@ -67,7 +69,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "favLength": undefined,
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -92,7 +96,9 @@ ShallowWrapper {
                         src="star-wars-logo-red.png"
             />
 </Link>,
-          <Nav />,
+          <Nav
+            favLength={undefined}
+/>,
         ],
         "className": "site-header",
       },
@@ -131,7 +137,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "favLength": undefined,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
