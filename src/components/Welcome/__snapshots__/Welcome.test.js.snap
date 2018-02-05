@@ -29,6 +29,9 @@ ShallowWrapper {
           className="stars-animate"
 />,
         <div
+          className="fade"
+/>,
+        <div
           className="crawl-wrap"
 >
           <div
@@ -67,6 +70,17 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "className": "stars-animate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fade",
         },
         "ref": null,
         "rendered": null,
@@ -169,6 +183,9 @@ ShallowWrapper {
             className="stars-animate"
 />,
           <div
+            className="fade"
+/>,
+          <div
             className="crawl-wrap"
 >
             <div
@@ -207,6 +224,17 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "className": "stars-animate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fade",
           },
           "ref": null,
           "rendered": null,
@@ -331,6 +359,9 @@ ShallowWrapper {
           className="stars-animate"
 />,
         <div
+          className="fade"
+/>,
+        <div
           className="crawl-wrap"
 >
           <div
@@ -363,6 +394,17 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "className": "stars-animate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fade",
         },
         "ref": null,
         "rendered": null,
@@ -455,6 +497,9 @@ ShallowWrapper {
             className="stars-animate"
 />,
           <div
+            className="fade"
+/>,
+          <div
             className="crawl-wrap"
 >
             <div
@@ -487,6 +532,17 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "className": "stars-animate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fade",
           },
           "ref": null,
           "rendered": null,
@@ -605,6 +661,9 @@ ShallowWrapper {
           className="stars-animate"
 />,
         <div
+          className="fade"
+/>,
+        <div
           className="crawl-wrap"
 >
           <div
@@ -643,6 +702,17 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "className": "stars-animate",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fade",
         },
         "ref": null,
         "rendered": null,
@@ -745,6 +815,9 @@ ShallowWrapper {
             className="stars-animate"
 />,
           <div
+            className="fade"
+/>,
+          <div
             className="crawl-wrap"
 >
             <div
@@ -783,6 +856,17 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "className": "stars-animate",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fade",
           },
           "ref": null,
           "rendered": null,
