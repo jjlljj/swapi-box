@@ -98,7 +98,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
+        <Header favLength={favorites.length}/>
         <Main 
           fetchPeople={this.fetchPeople}
           fetchPlanets={this.fetchPlanets}
