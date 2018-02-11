@@ -2,6 +2,9 @@
 
 In this project for Turing's Front End Engineering program, I was asked to create a React App using data from the Star Wars API (SWApi). I implemented Router to handle page navigation, and all of the deeply nested asynchronous API calls required to pull the data for display were thoroughly tested with Enzyme and Jest. The landing page features a text crawl based on the opening sequence of the movies, with text randomly selected from one of the films. The application also features card pages with information about characters, planets, and vehicles found in the films, and a favorites page where users can view favorited cards
 
+To see a live version of this project visit:
+http://starwarsbox.surge.sh/
+
 ## Project Goals
 
 * Separate application logic into small, testable functions.
